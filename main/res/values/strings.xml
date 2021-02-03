@@ -137,4 +137,8 @@
     <string name="edit_data">Редактировать данные</string>
     <string name="phone_number">Номер</string>
     <string name="create_order_btn">Создать заказ</string>
+    <string name="order_status">Статус:</string>
+    <string name="accepted_status">Принят</string>
+    <string name="completed_status">Выполнен</string>
+    <string name="canceled_status">Завершен</string>
 </resources>

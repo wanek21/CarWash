@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clOrderItem"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/order_item_height"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_next_gray" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/order_status"
+        android:textColor="@color/black"
+        android:textSize="@dimen/order_status"
+        app:layout_constraintBottom_toTopOf="@+id/tvCarWash"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStatusValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Принят"
+        android:textSize="@dimen/order_status"
+        android:textColor="#FF9800"
+        app:layout_constraintStart_toEndOf="@+id/tvStatus"
+        app:layout_constraintTop_toTopOf="@+id/tvStatus" />
+
+    <TextView
+        android:id="@+id/tvCarWash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Автомойка 'МИР'"
+        android:textColor="@color/black"
+        android:textSize="@dimen/order_car_wash"
+        app:layout_constraintBottom_toTopOf="@+id/tvData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="03.02.2021"
+        android:layout_marginBottom="3dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/order_data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCarWash" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_decoration"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
+        android:text="450Р"
+        android:textColor="@color/black"
+        android:textSize="@dimen/order_price"
+        app:layout_constraintBottom_toBottomOf="@+id/tvData"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/tvData" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

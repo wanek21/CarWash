@@ -7,7 +7,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/back_car_item">
 
         <Toolbar
             android:id="@+id/toolbar"
@@ -41,6 +42,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_decoration"
+            app:layout_constraintBottom_toTopOf="@id/rvOrders"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvOrders"

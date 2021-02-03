@@ -22,7 +22,7 @@ import ru.carwash.view.fragments.CarViewFragment;
 
 public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.ViewHolder> {
 
-    private FragmentActivity activity;
+    private FragmentActivity activity; // для доступа к FragmentManager
     private ArrayList<Car> cars;
 
     public CarsAdapter(FragmentActivity activity, ArrayList<Car> cars) {
@@ -46,7 +46,6 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.ViewHolder> {
             tvCarName = (TextView) view.findViewById(R.id.tvCarName);
             imgCarNumber = view.findViewById(R.id.imgNumber);
             imgRegion = view.findViewById(R.id.imgRegion);
-            Log.d(MainActivity.TAG,"ViewHolder");
         }
 
         public ConstraintLayout getParent() { return parent; }

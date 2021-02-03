@@ -21,6 +21,9 @@
     <dimen name="toolbar_height">40dp</dimen> // высота тулбара
     <dimen name="toolbar_text_size_side">15sp</dimen> // размер бокового текста в тулбаре
 
+    <dimen name="order_item_height">90dp</dimen> // высота элемента в списке заказов
+
+
     <dimen name="car_name_size">21sp</dimen> // рамзер шрифта в названии машины в карточке
     <dimen name="car_item_height">112dp</dimen> // высота карточки с машиной
     <dimen name="car_number_height">25dp</dimen> // высота автомобильного номера
@@ -29,4 +32,10 @@
     <dimen name="car_number_region_width">41dp</dimen> // ширина региона в номере
     <dimen name="car_number_size">21sp</dimen> // рамзер шрифта номера машины
     <dimen name="car_number_region_size">15sp</dimen> // рамзер шрифта региона машины
+
+    // размеры шрифтов
+    <dimen name="order_status">14sp</dimen>
+    <dimen name="order_car_wash">22sp</dimen>
+    <dimen name="order_data">14sp</dimen>
+    <dimen name="order_price">15sp</dimen>
 </resources>
