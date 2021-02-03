@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.carwash.carwash">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/CarWashTheme">
+        <activity android:name="ru.carwash.view.activities.EnterCodeActivity"
+            android:theme="@style/EnterCodeTheme"
+            android:windowSoftInputMode="stateVisible"/>
+        <activity android:name="ru.carwash.view.activities.EnterNumberActivity"
+            android:theme="@style/EnterCodeTheme"
+            android:windowSoftInputMode="stateVisible"/>
+        <activity
+            android:name="ru.carwash.view.activities.SignupActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="ru.carwash.view.activities.LoginActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="ru.carwash.view.activities.MainActivity"
+            android:theme="@style/CarWashTheme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ru.carwash.view.activities.WelcomeActivity"
+            android:theme="@style/WelcomeTheme" />
+    </application>
+
+</manifest>

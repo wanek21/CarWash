@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_size">200dp</dimen> // размер лого
+    <dimen name="logo_size_without_text_height">90dp</dimen> // высота лого, которое с текстом
+    <dimen name="logo_size_without_text_width">160dp</dimen> // ширина лого, которое с текстом
+    <dimen name="edit_text_height">42dp</dimen> // высота EditText
+    <dimen name="button_height">45dp</dimen> // высота кнопки
+    <dimen name="header_bias">0.015</dimen>
+    <dimen name="border_width">1px</dimen>
+    <dimen name="border_width_negative">-1px</dimen>
+    <dimen name="register_block_height">39dp</dimen>
+    <dimen name="register_block_in_fragment_height">35dp</dimen>
+    <dimen name="register_text_size">18sp</dimen>
+    <dimen name="register_text_in_fragment_size">15sp</dimen>
+    <dimen name="profile_text_size">19sp</dimen> // размер шрифта в меню экрана профиля
+    <dimen name="info_text_size">12sp</dimen> // рамзер текста с полезной информацией
+    <dimen name="symbol_code_height">43dp</dimen> // высота поля ввода кода из смс
+    <dimen name="symbol_code_width">32dp</dimen> // ширина поля ввода кода из смс
+    <dimen name="nav_bar_height">44dp</dimen> // высота нижнего бара
+    <dimen name="header_info_text">16sp</dimen>
+    <dimen name="toolbar_height">40dp</dimen> // высота тулбара
+    <dimen name="toolbar_text_size_side">15sp</dimen> // размер бокового текста в тулбаре
+
+    <dimen name="car_name_size">21sp</dimen> // рамзер шрифта в названии машины в карточке
+    <dimen name="car_item_height">112dp</dimen> // высота карточки с машиной
+    <dimen name="car_number_height">25dp</dimen> // высота автомобильного номера
+    <dimen name="car_number_width">100dp</dimen> // ширина автомобильного номера
+    <dimen name="car_number_region_height">25dp</dimen> // высота региона в номер
+    <dimen name="car_number_region_width">41dp</dimen> // ширина региона в номере
+    <dimen name="car_number_size">21sp</dimen> // рамзер шрифта номера машины
+    <dimen name="car_number_region_size">15sp</dimen> // рамзер шрифта региона машины
+</resources>

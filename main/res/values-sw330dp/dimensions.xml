@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_size">220dp</dimen>
+    <dimen name="logo_size_without_text_height">100dp</dimen>
+    <dimen name="logo_size_without_text_width">170dp</dimen>
+    <dimen name="edit_text_height">50dp</dimen>
+    <dimen name="button_height">50dp</dimen>
+    <dimen name="header_bias">0.04</dimen>
+    <dimen name="border_width">2px</dimen>
+    <dimen name="border_width_negative">-2px</dimen>
+    <dimen name="register_block_height">45dp</dimen>
+    <dimen name="register_block_in_fragment_height">41dp</dimen>
+    <dimen name="register_text_size">21sp</dimen>
+    <dimen name="register_text_in_fragment_size">18sp</dimen>
+    <dimen name="profile_text_size">21sp</dimen> // размер шрифта в меню экрана профиля
+    <dimen name="info_text_size">13sp</dimen>
+    <dimen name="symbol_code_height">46dp</dimen>
+    <dimen name="nav_bar_height">46dp</dimen>
+    <dimen name="header_info_text">18sp</dimen>
+    <dimen name="toolbar_height">42dp</dimen>
+    <dimen name="toolbar_text_size_side">18sp</dimen> // размер бокового текста в тулбаре
+
+    <dimen name="car_number_height">26dp</dimen> // высота номера
+    <dimen name="car_number_width">104dp</dimen> // ширина номера
+    <dimen name="car_number_region_height">26dp</dimen> // высота региона в номер
+    <dimen name="car_number_region_width">42dp</dimen> // ширина региона в номере
+    <dimen name="car_name_size">23sp</dimen> // рамзер шрифта в названии машины в карточке
+    <dimen name="car_item_height">120dp</dimen> // высота карточки с машиной
+    <dimen name="car_number_size">22sp</dimen> // рамзер шрифта номера машины
+    <dimen name="car_number_region_size">16sp</dimen> // рамзер шрифта региона машины
+</resources>

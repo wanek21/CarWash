@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Launcher theme -->
+    <style name="CarWashTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launcher_screen</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="CarWashTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <!--<item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>-->
+        <!-- Status bar color. -->
+        <!--<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="EnterCodeTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/welcome_background</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorOnPrimary">@color/welcome_background</item>
+    </style>
+
+    <style name="Toolbar1" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="Toolbar2" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="WelcomeTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/welcome_background</item>
+        <item name="colorPrimaryDark">@color/welcome_background</item>
+        <item name="colorOnPrimary">@color/welcome_background</item>
+    </style>
+
+</resources>

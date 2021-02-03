@@ -1,0 +1,281 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ru.carwash.view.fragments.EditCarFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:theme="@style/Toolbar2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/Toolbar2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+                    android:text="@string/nav_auto"
+                    android:textColor="@color/white"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary"
+                    android:text="@string/save"
+                    android:layout_margin="1dp"
+                    android:elevation="0dp"
+                    android:stateListAnimator="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clEditData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHintBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_in_fragment_height"
+                android:layout_marginStart="18dp"
+                android:text="@string/brand"
+                android:gravity="center_vertical"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_in_fragment_size"
+                app:layout_constraintEnd_toStartOf="@+id/etBrand"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etBrand"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintBrand"
+                app:layout_constraintTop_toBottomOf="@id/view6" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintBrand"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintBrand" />
+
+
+            <TextView
+                android:id="@+id/tvHintModel"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:text="@string/model"
+                android:gravity="center_vertical"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_in_fragment_size"
+                app:layout_constraintEnd_toStartOf="@+id/etModel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <EditText
+                android:id="@+id/etModel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintModel"
+                app:layout_constraintTop_toTopOf="@id/tvHintModel" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintModel"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintModel" />
+
+            <TextView
+                android:id="@+id/tvHintAutoNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:text="@string/auto_number"
+                android:gravity="center_vertical"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_in_fragment_size"
+                app:layout_constraintEnd_toStartOf="@+id/etAutoNumber"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <EditText
+                android:id="@+id/etAutoNumber"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="text"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintAutoNumber"
+                app:layout_constraintTop_toTopOf="@id/tvHintAutoNumber" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintAutoNumber"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintAutoNumber" />
+
+            <TextView
+                android:id="@+id/tvHintRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:text="@string/auto_region"
+                android:gravity="center_vertical"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_in_fragment_size"
+                app:layout_constraintEnd_toStartOf="@+id/etRegion"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+            <EditText
+                android:id="@+id/etRegion"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="text"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintRegion"
+                app:layout_constraintTop_toTopOf="@id/tvHintRegion" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintRegion"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintRegion" />
+
+            <TextView
+                android:id="@+id/tvHintCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:text="@string/auto_category"
+                android:gravity="center_vertical"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_in_fragment_size"
+                app:layout_constraintEnd_toStartOf="@+id/etCategory"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <EditText
+                android:id="@+id/etCategory"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintCategory"
+                app:layout_constraintTop_toTopOf="@id/tvHintCategory" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintCategory" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
