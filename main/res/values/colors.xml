@@ -21,6 +21,7 @@
     <color name="hint">#929292</color>
     <color name="line_decoration">#DFDFDF</color>
     <color name="border_edit_text">#126CB7</color>
+    <color name="back_floating_btn">#116BB6</color>
     <color name="info">#3A3A3A</color>
     <color name="back_nav_bar">#F9F9F9</color>
     <color name="nav_item">#979797</color>

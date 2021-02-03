@@ -136,4 +136,5 @@
     <string name="cancel">Отменить</string>
     <string name="edit_data">Редактировать данные</string>
     <string name="phone_number">Номер</string>
+    <string name="create_order_btn">Создать заказ</string>
 </resources>
