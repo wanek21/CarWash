@@ -1,0 +1,353 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ru.carwash.view.fragments.AcceptNewOrderFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:theme="@style/Toolbar2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/Toolbar2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+                    android:text="@string/order"
+                    android:textColor="@color/white"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvCarWashTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/car_wash"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_steps_subtitle"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"
+                    app:layout_constraintTop_toBottomOf="@id/tvCarWashTitle"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clCarWashPick"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/line2">
+
+                    <ImageView
+                        android:id="@+id/imgMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:src="@drawable/ic_map"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvCarWah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:text="Автомойка МИР"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ordering_car_wash_title"
+                        app:layout_constraintBottom_toTopOf="@+id/tvAddress"
+                        app:layout_constraintStart_toEndOf="@+id/imgMap"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed"/>
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Лейтенанта Шмидта, 1"
+                        android:textSize="@dimen/ordering_car_wash_address"
+                        android:textColor="@color/hint"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvCarWah"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCarWah" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"/>
+
+                <TextView
+                    android:id="@+id/tvCarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/nav_auto"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_steps_subtitle"
+                    android:textStyle="bold"
+                    android:padding="3dp" />
+
+                <View
+                    android:id="@+id/line4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clCarItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ordering_item_height"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line4">
+
+                    <TextView
+                        android:id="@+id/tvCarName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Audi TT"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/car_name_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/imgNumber"
+                        android:layout_width="@dimen/car_number_width"
+                        android:layout_height="@dimen/car_number_height"
+                        android:background="@drawable/ic_left_car_number"
+                        android:fontFamily="@font/road_numbers"
+                        android:gravity="center"
+                        android:text="a980aa"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/car_number_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imgRegion"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/imgRegion"
+                        android:layout_width="@dimen/car_number_region_width"
+                        android:layout_height="@dimen/car_number_region_height"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ic_right_car_number"
+                        android:fontFamily="@font/road_numbers"
+                        android:gravity="center"
+                        android:text="152"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/car_number_region_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgNumber"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"/>
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_steps_subtitle"
+                    android:padding="3dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"/>
+
+                <TextView
+                    android:id="@+id/tvDateValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/ordering_padding_in_date"
+                    android:paddingStart="16dp"
+                    android:text="03.02.2021"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_date_time" />
+
+                <View
+                    android:id="@+id/line7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"/>
+
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_steps_subtitle"
+                    android:padding="3dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/line8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"/>
+
+                <TextView
+                    android:id="@+id/tvTimeValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/ordering_padding_in_date"
+                    android:paddingStart="16dp"
+                    android:text="12:00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_date_time" />
+
+                <View
+                    android:id="@+id/line9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration" />
+
+                <TextView
+                    android:id="@+id/tvServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/services"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_steps_subtitle"
+                    android:textStyle="bold"
+                    android:padding="3dp" />
+
+                <View
+                    android:id="@+id/line10"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <View
+                    android:id="@+id/line11"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"
+                    app:layout_constraintTop_toBottomOf="@id/rvServices"/>
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/cost"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_steps_subtitle"
+                    android:textStyle="bold"
+                    android:padding="3dp" />
+
+                <View
+                    android:id="@+id/line12"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_decoration"
+                    app:layout_constraintTop_toBottomOf="@id/tvPrice"/>
+
+                <TextView
+                    android:id="@+id/tvCost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/ordering_padding_in_date"
+                    android:paddingStart="16dp"
+                    android:text="600Р"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ordering_date_time" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_done"
+            app:backgroundTint="@color/accent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

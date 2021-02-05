@@ -141,4 +141,16 @@
     <string name="accepted_status">Принят</string>
     <string name="completed_status">Выполнен</string>
     <string name="canceled_status">Завершен</string>
+    <string name="creating_order_toolbar_title">Создание заказа</string>
+    <string name="next2">Далее</string>
+    <string name="car_wash">Автомойка</string>
+    <string name="title_of_step1_order">Выберите\nавтомойку и авто</string>
+    <string name="title_of_step2_order">Выберите\nдату и время</string>
+    <string name="date">Дата</string>
+    <string name="time">Время</string>
+    <string name="title_of_step3_order">Выберите\nуслуги</string>
+    <string name="services">Услуги</string>
+    <string name="order">Заказ</string>
+    <string name="cost">Стоимость</string>
+    <string name="to_order">заказать</string>
 </resources>

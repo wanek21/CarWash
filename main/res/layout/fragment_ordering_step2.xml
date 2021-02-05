@@ -1,0 +1,147 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ru.carwash.view.fragments.OrderingStep2Fragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:paddingStart="16dp"
+            android:text="@string/title_of_step2_order"
+            android:textColor="@color/black"
+            android:textSize="@dimen/ordering_steps_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_decoration"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/ordering_steps_subtitle"
+            android:padding="3dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_decoration"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"/>
+
+        <TextView
+            android:id="@+id/tvDateValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="03.02.2021"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textSize="@dimen/ordering_date_time"
+            android:padding="@dimen/ordering_padding_in_date"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_decoration"
+            app:layout_constraintTop_toBottomOf="@id/tvDateValue"/>
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:layout_marginTop="1dp"
+            android:src="@drawable/ic_next_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDateValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvDateValue"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/ordering_steps_subtitle"
+            android:padding="3dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateValue" />
+
+        <View
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_decoration"
+            app:layout_constraintTop_toBottomOf="@id/tvTime"/>
+
+        <TextView
+            android:id="@+id/tvTimeValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="12:00"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textSize="@dimen/ordering_date_time"
+            android:padding="@dimen/ordering_padding_in_date"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line4" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_next_gray"
+            android:layout_marginTop="1dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTimeValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvTimeValue"
+            app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+
+        <View
+            android:id="@+id/line5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_decoration"
+            app:layout_constraintTop_toBottomOf="@id/imageView9"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

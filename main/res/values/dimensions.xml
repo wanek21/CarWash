@@ -22,6 +22,8 @@
     <dimen name="toolbar_text_size_side">15sp</dimen> // размер бокового текста в тулбаре
 
     <dimen name="order_item_height">90dp</dimen> // высота элемента в списке заказов
+    <dimen name="ordering_item_height">54dp</dimen> // высота эелементов в списках при создании заказа
+    <dimen name="ordering_padding_in_date">8dp</dimen> // padding в textview с датой заказа
 
 
     <dimen name="car_name_size">21sp</dimen> // рамзер шрифта в названии машины в карточке
@@ -38,4 +40,11 @@
     <dimen name="order_car_wash">22sp</dimen>
     <dimen name="order_data">14sp</dimen>
     <dimen name="order_price">15sp</dimen>
+    <dimen name="ordering_steps">16sp</dimen> // текущий шаг
+    <dimen name="ordering_steps_title">28sp</dimen> // заголовок в каждом шаге при создании заказа
+    <dimen name="ordering_steps_subtitle">18sp</dimen> // подзаголовок в каждом шаге при создании заказа
+    <dimen name="ordering_car_wash_title">21sp</dimen> // название автомойки в создании заказа
+    <dimen name="ordering_car_wash_address">13sp</dimen> // адрес автомойки в создании заказа
+    <dimen name="ordering_date_time">21sp</dimen> // дата и время заказа
+    <dimen name="ordering_title_of_item">18sp</dimen> // размер шрифта в названии элемента в списке
 </resources>

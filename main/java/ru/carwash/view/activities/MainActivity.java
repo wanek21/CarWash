@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.carwash.carwash.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import ru.carwash.view.fragments.AcceptNewOrderFragment;
 import ru.carwash.view.fragments.CarsFragment;
 import ru.carwash.view.fragments.OrdersFragment;
 import ru.carwash.view.fragments.ProfileFragment;
