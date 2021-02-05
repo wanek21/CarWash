@@ -4,7 +4,7 @@
     <dimen name="logo_size_without_text_height">90dp</dimen> // высота лого, которое с текстом
     <dimen name="logo_size_without_text_width">160dp</dimen> // ширина лого, которое с текстом
     <dimen name="edit_text_height">42dp</dimen> // высота EditText
-    <dimen name="button_height">45dp</dimen> // высота кнопки
+    <dimen name="button_height">44dp</dimen> // высота кнопки
     <dimen name="header_bias">0.015</dimen>
     <dimen name="border_width">1px</dimen>
     <dimen name="border_width_negative">-1px</dimen>

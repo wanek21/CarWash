@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     setCurrentFragment(carsFragment, TAG_AUTO_FRAGMENT);
                     break;
                 case R.id.orders:
-                    setCurrentFragment(ordersFragment, TAG_ORDERS_FRAGMENT);
+                    setCurrentFragment(new AcceptNewOrderFragment(), TAG_ORDERS_FRAGMENT);
                     break;
                 case R.id.profile:
                     setCurrentFragment(profileFragment, TAG_PROFILE_FRAGMENT);
