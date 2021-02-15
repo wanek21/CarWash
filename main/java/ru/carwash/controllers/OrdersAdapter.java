@@ -16,14 +16,15 @@ import com.carwash.carwash.R;
 import java.util.ArrayList;
 
 import ru.carwash.models.Order;
+import ru.carwash.view.fragments.ViewOrderFragment;
 
 public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder> {
 
-    private FragmentActivity activity; // для доступа к FragmentManager
+    private FragmentActivity context; // для доступа к FragmentManager
     private ArrayList<Order> orders;
 
     public OrdersAdapter(FragmentActivity activity, ArrayList<Order> orders) {
-        this.activity = activity;
+        this.context = activity;
         this.orders = orders;
     }
 
@@ -59,15 +60,22 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.getParent().setOnClickListener(v -> {
+            context.getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container,new ViewOrderFragment(orders.get(position)))
+                    .addToBackStack("view order")
+                    .commit();
+        });
         if (orders.get(position).getStatus() == Order.ACCEPTED_STATUS) {
             holder.getTvStatus().setText(R.string.accepted_status); // ставим текст "Принят"
-            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.accepted_status)); // задаем соответствующий цвет текста
+            holder.getTvStatus().setTextColor(context.getResources().getColor(R.color.accepted_status)); // задаем соответствующий цвет текста
         } else if(orders.get(position).getStatus() == Order.COMPLETED_STATUS) {
             holder.getTvStatus().setText(R.string.completed_status);
-            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.completed_status));
+            holder.getTvStatus().setTextColor(context.getResources().getColor(R.color.completed_status));
         } else if(orders.get(position).getStatus() == Order.CANCELED_STATUS) {
             holder.getTvStatus().setText(R.string.canceled_status);
-            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.canceled_status));
+            holder.getTvStatus().setTextColor(context.getResources().getColor(R.color.canceled_status));
         }
     }
 

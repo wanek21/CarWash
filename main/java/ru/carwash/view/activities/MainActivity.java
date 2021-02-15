@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.speech.SpeechRecognizer;
 
 import com.carwash.carwash.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     setCurrentFragment(carsFragment, TAG_AUTO_FRAGMENT);
                     break;
                 case R.id.orders:
-                    setCurrentFragment(new AcceptNewOrderFragment(), TAG_ORDERS_FRAGMENT);
+                    setCurrentFragment(ordersFragment, TAG_ORDERS_FRAGMENT);
                     break;
                 case R.id.profile:
                     setCurrentFragment(profileFragment, TAG_PROFILE_FRAGMENT);

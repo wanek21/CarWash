@@ -42,7 +42,7 @@ public class OrderingStep3Fragment extends Fragment {
         services.add(new Service("Протереть очки", 70));
 
 
-        ServicesAdapter servicesAdapter = new ServicesAdapter(getActivity(), services, false);
+        ServicesAdapter servicesAdapter = new ServicesAdapter(getActivity(), services);
         rvServices.setLayoutManager(new LinearLayoutManager(getContext()));
         rvServices.setAdapter(servicesAdapter);
         return view;

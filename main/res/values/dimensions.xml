@@ -26,6 +26,7 @@
     <dimen name="ordering_padding_in_date">8dp</dimen> // padding в textview с датой заказа
 
 
+    <dimen name="margin_top_rate_title">22dp</dimen> // отступ от тулбара в экране с отзывом
     <dimen name="car_name_size">21sp</dimen> // рамзер шрифта в названии машины в карточке
     <dimen name="car_item_height">112dp</dimen> // высота карточки с машиной
     <dimen name="car_number_height">25dp</dimen> // высота автомобильного номера
@@ -34,6 +35,11 @@
     <dimen name="car_number_region_width">41dp</dimen> // ширина региона в номере
     <dimen name="car_number_size">21sp</dimen> // рамзер шрифта номера машины
     <dimen name="car_number_region_size">15sp</dimen> // рамзер шрифта региона машины
+    <dimen name="liked_thing_size">64dp</dimen>
+    <dimen name="margin_top_users_review_edittext">35dp</dimen>
+    <dimen name="margin_bottom_btn_done">24dp</dimen>
+    <dimen name="users_review_edittext_height">35dp</dimen>
+    <dimen name="what_did_you_like_margin_top">10dp</dimen>
 
     // размеры шрифтов
     <dimen name="order_status">14sp</dimen>
@@ -47,4 +53,7 @@
     <dimen name="ordering_car_wash_address">13sp</dimen> // адрес автомойки в создании заказа
     <dimen name="ordering_date_time">21sp</dimen> // дата и время заказа
     <dimen name="ordering_title_of_item">18sp</dimen> // размер шрифта в названии элемента в списке
+    <dimen name="rate_order_title">26sp</dimen>
+    <dimen name="what_did_you_like">18sp</dimen>
+    <dimen name="liked_thing_title">15sp</dimen>
 </resources>

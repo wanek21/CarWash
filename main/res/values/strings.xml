@@ -153,4 +153,17 @@
     <string name="order">Заказ</string>
     <string name="cost">Стоимость</string>
     <string name="to_order">заказать</string>
+    <string name="my_orders">Мои заказы</string>
+    <string name="status">Статус</string>
+    <string name="complited_status_info">Можете забрать машину</string>
+    <string name="leave_review_button">Оставить отзыв</string>
+    <string name="review_toolbar">Отзыв</string>
+    <string name="rate_the_order">Оцените заказ</string>
+    <string name="what_did_you_like">Что вам особенно понравилось?</string>
+    <string name="speed_of_order">Скорость</string>
+    <string name="cost_of_order">Стоимость</string>
+    <string name="service_of_order">Сервис</string>
+    <string name="cleanliness_of_order">Чистота</string>
+    <string name="your_review">Ваш комментарий...</string>
+    <string name="done">Готово</string>
 </resources>

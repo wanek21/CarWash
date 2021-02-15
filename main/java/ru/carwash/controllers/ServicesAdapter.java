@@ -27,7 +27,7 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
 
     private Context context;
     private ArrayList<Service> services;
-    private boolean isClickable = false;
+    private boolean isClickable = true;
 
     private final ArrayList<Integer> selectedServices = new ArrayList<>();
 
