@@ -45,6 +45,7 @@ public class OrderingStep3Fragment extends Fragment {
         ServicesAdapter servicesAdapter = new ServicesAdapter(getActivity(), services);
         rvServices.setLayoutManager(new LinearLayoutManager(getContext()));
         rvServices.setAdapter(servicesAdapter);
+
         return view;
     }
 }

@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.navigation.Navigation;
 
 import com.carwash.carwash.R;
 
@@ -24,11 +25,7 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         btnEdit = view.findViewById(R.id.btnEdit);
         btnEdit.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, new EditProfileFragment())
-                    .addToBackStack("edit profile")
-                    .commit();
+            Navigation.findNavController(getActivity(),R.id.fragment_container).navigate(R.id.action_profile_to_editProfile);
         });
         return view;
     }

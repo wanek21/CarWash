@@ -1,268 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context="ru.carwash.view.activities.SignupActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
 
-    <Toolbar
-        android:id="@+id/toolbar"
-        style="@style/Toolbar1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:theme="@style/Toolbar2"
-        android:title="@string/register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Toolbar2" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/enter_data"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="@dimen/header_bias" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnSignup"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/default_back_btn"
-        android:text="@string/sign_up"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clEditData"
-        app:layout_constraintVertical_bias="0.060000002" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clEditData"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <View
-            android:id="@+id/view6"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/line_decoration"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/Toolbar2"
+            android:title="@string/register"
+            app:popupTheme="@style/Toolbar2" />
 
         <TextView
-            android:id="@+id/tvHintName"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/register_block_height"
-            android:layout_marginStart="18dp"
-            android:padding="8dp"
-            android:text="@string/name"
-            android:textAlignment="textStart"
-            android:textColor="@color/hint"
-            android:textSize="@dimen/register_text_size"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/register_block_height"
-            android:background="@color/white"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingEnd="18dp"
-            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_data"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvHintName"
-            app:layout_constraintTop_toBottomOf="@id/view6" />
+            android:textSize="24sp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"/>
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/line_decoration"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvHintName"
-            app:layout_constraintTop_toBottomOf="@+id/tvHintName" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clEditData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHintName"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:padding="8dp"
+                android:text="@string/name"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintName"
+                app:layout_constraintTop_toBottomOf="@id/view6" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintName"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintName" />
 
 
-        <TextView
-            android:id="@+id/tvHintLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/register_block_height"
-            android:layout_marginStart="18dp"
-            android:padding="8dp"
-            android:text="@string/last_name"
-            android:textAlignment="textStart"
-            android:textColor="@color/hint"
-            android:textSize="@dimen/register_text_size"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonLastName"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            <TextView
+                android:id="@+id/tvHintLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:padding="8dp"
+                android:text="@string/last_name"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonLastName"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonLastName"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/register_block_height"
-            android:background="@color/white"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingEnd="18dp"
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvHintLastName"
-            app:layout_constraintTop_toTopOf="@id/tvHintLastName" />
+            <EditText
+                android:id="@+id/editTextTextPersonLastName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintLastName"
+                app:layout_constraintTop_toTopOf="@id/tvHintLastName" />
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/line_decoration"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvHintLastName"
-            app:layout_constraintTop_toBottomOf="@+id/tvHintLastName" />
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintLastName"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintLastName" />
 
-        <TextView
-            android:id="@+id/tvHintCity"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/register_block_height"
-            android:layout_marginStart="18dp"
-            android:padding="8dp"
-            android:text="@string/city"
-            android:textAlignment="textStart"
-            android:textColor="@color/hint"
-            android:textSize="@dimen/register_text_size"
-            app:layout_constraintEnd_toStartOf="@+id/etCity"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            <TextView
+                android:id="@+id/tvHintCity"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:padding="8dp"
+                android:text="@string/city"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/etCity"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-        <EditText
-            android:id="@+id/etCity"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/register_block_height"
-            android:background="@color/white"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingEnd="18dp"
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvHintCity"
-            app:layout_constraintTop_toTopOf="@id/tvHintCity" />
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="text"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintCity"
+                app:layout_constraintTop_toTopOf="@id/tvHintCity" />
 
-        <View
-            android:id="@+id/view3"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/line_decoration"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvHintCity"
-            app:layout_constraintTop_toBottomOf="@+id/tvHintCity" />
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintCity"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintCity" />
 
-        <TextView
-            android:id="@+id/tvHintEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/register_block_height"
-            android:layout_marginStart="18dp"
-            android:padding="8dp"
-            android:text="@string/email"
-            android:textAlignment="textStart"
-            android:textColor="@color/hint"
-            android:textSize="@dimen/register_text_size"
-            app:layout_constraintEnd_toStartOf="@+id/etEmail"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view3" />
+            <TextView
+                android:id="@+id/tvHintPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:padding="8dp"
+                android:text="@string/phone_number"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/etPhone"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
 
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/register_block_height"
-            android:background="@color/white"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingEnd="18dp"
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvHintEmail"
-            app:layout_constraintTop_toTopOf="@id/tvHintEmail" />
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="phone"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintPhone"
+                app:layout_constraintTop_toTopOf="@id/tvHintPhone" />
 
-        <View
-            android:id="@+id/view4"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/line_decoration"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvHintEmail"
-            app:layout_constraintTop_toBottomOf="@+id/tvHintEmail" />
+            <View
+                android:id="@+id/view7"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintPhone"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintPhone" />
 
-        <TextView
-            android:id="@+id/tvHintNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/register_block_height"
-            android:layout_marginStart="18dp"
-            android:padding="8dp"
-            android:text="@string/password"
-            android:textAlignment="textStart"
-            android:textColor="@color/hint"
-            android:textSize="@dimen/register_text_size"
-            app:layout_constraintEnd_toStartOf="@+id/etNumber"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view4" />
+            <TextView
+                android:id="@+id/tvHintEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:padding="8dp"
+                android:text="@string/email"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/etEmail"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view7" />
 
-        <EditText
-            android:id="@+id/etNumber"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/register_block_height"
-            android:background="@color/white"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:paddingEnd="18dp"
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvHintNumber"
-            app:layout_constraintTop_toTopOf="@id/tvHintNumber" />
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintEmail"
+                app:layout_constraintTop_toTopOf="@id/tvHintEmail" />
 
-        <View
-            android:id="@+id/view5"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/line_decoration"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHintNumber" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvHintEmail"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintEmail" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvHintNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/register_block_height"
+                android:layout_marginStart="18dp"
+                android:padding="8dp"
+                android:text="@string/password"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/register_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/etNumber"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <EditText
+                android:id="@+id/etNumber"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/register_block_height"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:paddingEnd="18dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvHintNumber"
+                app:layout_constraintTop_toTopOf="@id/tvHintNumber" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/line_decoration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHintNumber" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/default_back_btn"
+            android:text="@string/sign_up"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+

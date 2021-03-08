@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.carwash.carwash.R;
 
@@ -27,6 +29,15 @@ public class EnterNumberActivity extends AppCompatActivity {
 
         btnNext = findViewById(R.id.btnNext);
         btnNext.setOnClickListener(v -> {
+
+            Log.d(MainActivity.TAG, "Phone: " + etPhone.getText().toString() + "\n" +
+                    "Length: " + etPhone.getText().toString().trim().length());
+
+            if(!isNumberValid(etPhone.getText().toString())) {
+                Toast.makeText(EnterNumberActivity.this, "Неправильно набран номер", Toast.LENGTH_LONG).show();
+                return;
+            }
+
             Intent codeIntent = new Intent(EnterNumberActivity.this,EnterCodeActivity.class);
             codeIntent.putExtra("phone",etPhone.getText());
             startActivity(codeIntent);
@@ -36,10 +47,15 @@ public class EnterNumberActivity extends AppCompatActivity {
         setMaskToEditText();
     }
 
+    public boolean isNumberValid(String number) {
+        //TODO("There is no info about phones yet")
+        if(number.length() < 14) return false;
+        return true;
+    }
     private void setMaskToEditText() {
         MaskImpl mask = MaskImpl.createTerminated(PredefinedSlots.RUS_PHONE_NUMBER);
         FormatWatcher watcher = new MaskFormatWatcher(mask);
         watcher.installOn(etPhone);
-        etPhone.setText(" "); // костылек, чтобы отображался регион (+7)
+        etPhone.setText(" "); // костылек, чтобы регион (+7) отображался сразу
     }
 }

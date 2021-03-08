@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/CarWashTheme">
+        android:theme="@style/CarWashTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name="ru.carwash.view.activities.EnterCodeActivity"
             android:theme="@style/EnterCodeTheme"
             android:windowSoftInputMode="stateVisible"/>

@@ -19,6 +19,7 @@
     <dimen name="header_info_text">18sp</dimen>
     <dimen name="toolbar_height">42dp</dimen>
     <dimen name="toolbar_text_size_side">18sp</dimen> // размер бокового текста в тулбаре
+    <dimen name="edit_text_login_height">48dp</dimen>
 
     <dimen name="order_item_height">95dp</dimen> // высота элемента в списке заказов
     <dimen name="ordering_item_height">58dp</dimen> // высота эелементов в списках при создании заказа
@@ -38,6 +39,7 @@
     <dimen name="margin_bottom_btn_done">26dp</dimen>
     <dimen name="users_review_edittext_height">36dp</dimen>
     <dimen name="what_did_you_like_margin_top">14dp</dimen>
+    <dimen name="margin_between_blocks_in_viewing_carwash">6dp</dimen>
 
     // размеры шрифтов
     <dimen name="order_status">15sp</dimen>

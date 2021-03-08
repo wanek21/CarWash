@@ -1,6 +1,6 @@
 package ru.carwash.controllers;
 
-import android.util.Log;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentActivity;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.carwash.carwash.R;
@@ -16,15 +17,14 @@ import com.carwash.carwash.R;
 import java.util.ArrayList;
 
 import ru.carwash.models.Order;
-import ru.carwash.view.fragments.ViewOrderFragment;
 
 public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder> {
 
-    private FragmentActivity context; // для доступа к FragmentManager
+    private FragmentActivity activity; // для доступа к FragmentManager
     private ArrayList<Order> orders;
 
     public OrdersAdapter(FragmentActivity activity, ArrayList<Order> orders) {
-        this.context = activity;
+        this.activity = activity;
         this.orders = orders;
     }
 
@@ -61,21 +61,19 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.getParent().setOnClickListener(v -> {
-            context.getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container,new ViewOrderFragment(orders.get(position)))
-                    .addToBackStack("view order")
-                    .commit();
+            Bundle bundleOrder = new Bundle();
+            bundleOrder.putParcelable("order",orders.get(position));
+            Navigation.findNavController(activity,R.id.fragment_container).navigate(R.id.action_ordersList_to_viewOrder,bundleOrder);
         });
         if (orders.get(position).getStatus() == Order.ACCEPTED_STATUS) {
             holder.getTvStatus().setText(R.string.accepted_status); // ставим текст "Принят"
-            holder.getTvStatus().setTextColor(context.getResources().getColor(R.color.accepted_status)); // задаем соответствующий цвет текста
+            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.accepted_status)); // задаем соответствующий цвет текста
         } else if(orders.get(position).getStatus() == Order.COMPLETED_STATUS) {
             holder.getTvStatus().setText(R.string.completed_status);
-            holder.getTvStatus().setTextColor(context.getResources().getColor(R.color.completed_status));
+            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.completed_status));
         } else if(orders.get(position).getStatus() == Order.CANCELED_STATUS) {
             holder.getTvStatus().setText(R.string.canceled_status);
-            holder.getTvStatus().setTextColor(context.getResources().getColor(R.color.canceled_status));
+            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.canceled_status));
         }
     }
 

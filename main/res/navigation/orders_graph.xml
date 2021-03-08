@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orders_graph"
+    app:startDestination="@id/ordersList">
+
+    <fragment
+        android:id="@+id/ordersList"
+        tools:layout="@layout/fragment_orders"
+        android:name="ru.carwash.view.fragments.OrdersFragment">
+
+        <action
+            android:id="@+id/action_ordersList_to_createOrder"
+            app:destination="@id/createOrder" />
+        <action
+            android:id="@+id/action_ordersList_to_viewOrder"
+            app:destination="@id/viewOrder" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewOrder"
+        tools:layout="@layout/fragment_view_order"
+        android:name="ru.carwash.view.fragments.ViewOrderFragment">
+
+        <argument
+            android:name="order"
+            app:argType="ru.carwash.models.Order"/>
+        <action
+            android:id="@+id/action_viewOrder_to_leaveReview"
+            app:destination="@id/leaveReview" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/leaveReview"
+        tools:layout="@layout/fragment_leave_review"
+        android:name="ru.carwash.view.fragments.LeaveReviewFragment">
+        <action
+            android:id="@+id/action_leaveReview_to_ordersList"
+            app:destination="@id/ordersList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createOrder"
+        tools:layout="@layout/fragment_create_order"
+        android:name="ru.carwash.view.fragments.CreateOrderFragment">
+
+        <action
+            android:id="@+id/action_createOrder_to_acceptNewOrder"
+            app:destination="@id/acceptNewOrder" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/acceptNewOrder"
+        tools:layout="@layout/fragment_accept_new_order"
+        android:name="ru.carwash.view.fragments.AcceptNewOrderFragment">
+
+    </fragment>
+
+</navigation>

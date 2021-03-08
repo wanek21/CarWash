@@ -72,7 +72,7 @@ public class EditProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_edit_profile, container, false);
         etPhone = view.findViewById(R.id.etNumber);
         setMaskToEditText();
-        etPhone.setText("9503743177");
+        etPhone.setText("95033984598");
         return view;
     }
 

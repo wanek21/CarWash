@@ -166,4 +166,6 @@
     <string name="cleanliness_of_order">Чистота</string>
     <string name="your_review">Ваш комментарий...</string>
     <string name="done">Готово</string>
+    <string name="reviews_button">Отзывы</string>
+    <string name="working_hours">Время работы</string>
 </resources>

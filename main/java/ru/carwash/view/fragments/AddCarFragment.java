@@ -3,6 +3,7 @@ package ru.carwash.view.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -61,10 +62,7 @@ public class AddCarFragment extends Fragment {
         toolbar = view.findViewById(R.id.toolbar);
         btnNext = view.findViewById(R.id.btnNext);
         btnNext.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container,new CarsFragment())
-                    .commit();
+            Navigation.findNavController(getActivity(),R.id.fragment_container).navigateUp();
         });
         getActivity().setActionBar(toolbar);
         // Inflate the layout for this fragment

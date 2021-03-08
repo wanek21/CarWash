@@ -8,6 +8,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import ru.carwash.controllers.DataProcessor;
+
 import static org.junit.Assert.*;
 
 /**
@@ -21,6 +23,7 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.carwash", appContext.getPackageName());
+        assertEquals("ru.carwash", appContext.getPackageName());
     }
+
 }

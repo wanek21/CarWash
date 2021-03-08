@@ -3,6 +3,7 @@ package ru.carwash.view.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -63,20 +64,9 @@ public class CarsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cars,container,false);
         btnNext = view.findViewById(R.id.btnNext);
         recyclerViewCars = view.findViewById(R.id.rvCars);
-        recyclerViewCars.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container,new CarViewFragment())
-                    .addToBackStack("view car")
-                    .commit();
-        });
 
         btnNext.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container,new AddCarFragment())
-                    .addToBackStack("add car")
-                    .commit();
+            Navigation.findNavController(getActivity(),R.id.fragment_container).navigate(R.id.carsList_to_addCar);
         });
         ArrayList<Car> cars = new ArrayList<>(2);
         cars.add(new Car("Audi","TT","A999AA","152","Легковая"));

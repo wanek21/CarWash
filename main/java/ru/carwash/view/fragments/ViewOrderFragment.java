@@ -3,6 +3,7 @@ package ru.carwash.view.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -70,6 +71,7 @@ public class ViewOrderFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        order = getArguments().getParcelable("order");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -84,11 +86,7 @@ public class ViewOrderFragment extends Fragment {
         btnEdit = view.findViewById(R.id.btnEdit);
         btnLeaveReview = view.findViewById(R.id.btnLeaveReview);
         btnLeaveReview.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, new LeaveReviewFragment())
-                    .addToBackStack("leave review")
-                    .commit();
+            Navigation.findNavController(getActivity(),R.id.fragment_container).navigate(R.id.action_viewOrder_to_leaveReview);
         });
         rvServices = view.findViewById(R.id.rvServices);
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/auto"
+    <item android:id="@+id/cars_graph"
         android:title="@string/nav_auto"
         android:icon="@drawable/ic_auto"/>
-    <item android:id="@+id/orders"
+    <item android:id="@+id/orders_graph"
         android:title="@string/nav_orders"
         android:icon="@drawable/ic_orders"/>
-    <item android:id="@+id/map"
+    <item android:id="@+id/map_graph"
         android:title="@string/nav_map"
         android:icon="@drawable/ic_map_nav"/>
-    <item android:id="@+id/profile"
+    <item android:id="@+id/profile_graph"
         android:title="@string/nav_profile"
         android:icon="@drawable/ic_profile"/>
 </menu>

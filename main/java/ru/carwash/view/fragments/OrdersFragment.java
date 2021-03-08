@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,11 +41,7 @@ public class OrdersFragment extends Fragment {
         recyclerViewOrders = view.findViewById(R.id.rvOrders);
         btnNewOrder = view.findViewById(R.id.btnNewOrder);
         btnNewOrder.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, new CreateOrderFragment())
-                    .addToBackStack("create order")
-                    .commit();
+            Navigation.findNavController(getActivity(),R.id.fragment_container).navigate(R.id.action_ordersList_to_createOrder);
         });
 
         orders = new ArrayList<Order>(12);

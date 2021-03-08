@@ -2,7 +2,9 @@ package ru.carwash.view.fragments;
 
 import android.os.Bundle;
 
+import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,6 +58,7 @@ public class CarViewFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        car = getArguments().getParcelable("car");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -74,11 +77,9 @@ public class CarViewFragment extends Fragment {
         tvCarCategory = view.findViewById(R.id.tvCategory);
 
         btnEditCar.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container,new EditCarFragment(car))
-                    .addToBackStack("edit car")
-                    .commit();
+            Bundle bundleCar = new Bundle();
+            bundleCar.putParcelable("car",car);
+            Navigation.findNavController(getActivity(),R.id.fragment_container).navigate(R.id.viewCar_to_editCar,bundleCar);
         });
         tvCarName.setText(car.getBrand() + " " + car.getModel());
         tvCarNumber.setText(car.getCarNumber());

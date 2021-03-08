@@ -3,9 +3,11 @@ package ru.carwash.view.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.navigation.Navigation;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
@@ -15,6 +17,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.carwash.carwash.R;
+
+import ru.carwash.models.Order;
 
 /* Фрагмент для процесса создания\заполнения заказа
 *  Представляет из себя Toolbar и ViewPager, в котором свайпаются\переключаются шаги заказа */
@@ -26,6 +30,8 @@ public class CreateOrderFragment extends Fragment {
     private ViewPager viewPager;
 
     private ViewPagerAdapter viewPagerAdapter;
+
+    private Order order;
 
     private final int COUNT_ORDERING_STEPS = 3; // кол-во шагов (фрагментов) при заполнении заказа
 
@@ -40,6 +46,9 @@ public class CreateOrderFragment extends Fragment {
         });
         tvNext = view.findViewById(R.id.tvNext);
         tvNext.setOnClickListener(v -> {
+            //TODO
+            if((viewPager.getCurrentItem()-1) == COUNT_ORDERING_STEPS)
+                Navigation.findNavController(getActivity(),R.id.fragment_container).navigate(R.id.action_createOrder_to_acceptNewOrder);
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
         });
         tvStep = view.findViewById(R.id.tvStep);

@@ -22,7 +22,7 @@
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="0dp"
-        android:layout_height="@dimen/edit_text_height"
+        android:layout_height="@dimen/edit_text_login_height"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/back_edit_top"
@@ -41,9 +41,9 @@
         app:layout_constraintVertical_bias="0.27" />
 
     <EditText
-        android:id="@+id/etNumberword"
+        android:id="@+id/etPass"
         android:layout_width="0dp"
-        android:layout_height="@dimen/edit_text_height"
+        android:layout_height="@dimen/edit_text_login_height"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/back_edit_bottom"
@@ -85,7 +85,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNumberword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
     <TextView
         android:id="@+id/tvForgetNumber"
@@ -94,8 +94,8 @@
         android:text="@string/forget_pass"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="@+id/etNumberword"
-        app:layout_constraintTop_toBottomOf="@+id/etNumberword"
+        app:layout_constraintEnd_toEndOf="@+id/etPass"
+        app:layout_constraintTop_toBottomOf="@+id/etPass"
         app:layout_constraintVertical_bias="0.06999999" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
