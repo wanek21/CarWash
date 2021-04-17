@@ -1,16 +1,27 @@
 package ru.carwash.controllers
 
 import android.content.Context
-import android.content.SharedPreferences
-import com.carwash.carwash.R
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class SessionManager(private val context: Context) {
+class SessionManager @Inject constructor(@ApplicationContext private val context: Context) {
 
     companion object {
         const val USER_TOKEN = "user_token"
+        const val IS_LOGGED = "is_logged"
     }
 
-    fun saveAuthToken(token: String) {
+    fun login(token: String) {
+        saveAuthToken(token)
+        DataProcessor.saveData(context, IS_LOGGED, true)
+    }
+    fun logout() {
+        DataProcessor.saveData(context, IS_LOGGED, false)
+    }
+    fun isLogged(): Boolean {
+        return DataProcessor.getBoolean(context, IS_LOGGED,false)
+    }
+    private fun saveAuthToken(token: String) {
         DataProcessor.saveData(context, USER_TOKEN, token)
     }
 

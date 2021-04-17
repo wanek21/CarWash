@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/ordersList"
         tools:layout="@layout/fragment_orders"
-        android:name="ru.carwash.view.fragments.OrdersFragment">
+        android:name="ru.carwash.screens.main.orders.OrdersFragment">
 
         <action
             android:id="@+id/action_ordersList_to_createOrder"
@@ -21,11 +21,11 @@
     <fragment
         android:id="@+id/viewOrder"
         tools:layout="@layout/fragment_view_order"
-        android:name="ru.carwash.view.fragments.ViewOrderFragment">
+        android:name="ru.carwash.screens.main.orders.ViewOrderFragment">
 
         <argument
             android:name="order"
-            app:argType="ru.carwash.models.Order"/>
+            app:argType="ru.carwash.dto.Order"/>
         <action
             android:id="@+id/action_viewOrder_to_leaveReview"
             app:destination="@id/leaveReview" />
@@ -35,7 +35,7 @@
     <fragment
         android:id="@+id/leaveReview"
         tools:layout="@layout/fragment_leave_review"
-        android:name="ru.carwash.view.fragments.LeaveReviewFragment">
+        android:name="ru.carwash.screens.main.orders.LeaveReviewFragment">
         <action
             android:id="@+id/action_leaveReview_to_ordersList"
             app:destination="@id/ordersList" />
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/createOrder"
         tools:layout="@layout/fragment_create_order"
-        android:name="ru.carwash.view.fragments.CreateOrderFragment">
+        android:name="ru.carwash.screens.main.orders.CreateOrderFragment">
 
         <action
             android:id="@+id/action_createOrder_to_acceptNewOrder"
@@ -54,7 +54,7 @@
     <fragment
         android:id="@+id/acceptNewOrder"
         tools:layout="@layout/fragment_accept_new_order"
-        android:name="ru.carwash.view.fragments.AcceptNewOrderFragment">
+        android:name="ru.carwash.screens.main.orders.AcceptNewOrderFragment">
 
     </fragment>
 

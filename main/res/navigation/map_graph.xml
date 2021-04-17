@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/map"
         tools:layout="@layout/fragment_map"
-        android:name="ru.carwash.view.fragments.MapFragment">
+        android:name="ru.carwash.screens.main.map.MapFragment">
         <action
             android:id="@+id/action_map_to_viewCarwash"
             app:destination="@id/viewCarwash" />
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/viewCarwash"
         tools:layout="@layout/fragment_view_carwash"
-        android:name="ru.carwash.view.fragments.ViewCarwashFragment"/>
+        android:name="ru.carwash.screens.main.map.ViewCarwashFragment"/>
 
 </navigation>

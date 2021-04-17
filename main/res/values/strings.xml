@@ -168,4 +168,18 @@
     <string name="done">Готово</string>
     <string name="reviews_button">Отзывы</string>
     <string name="working_hours">Время работы</string>
+    <string name="first_name_is_empty">Имя не может быть пустым</string>
+    <string name="first_name_min_length">Имя должно содержать минимум 2 символа</string>
+    <string name="last_name_is_empty">Фамилия не должна быть пустой</string>
+    <string name="last_name_min_legth">Фамилия должна содержать по крайней мере 2 символа</string>
+    <string name="name_is_empty">Имя и фамилия не должны быть пустыми</string>
+    <string name="empty_field">Это поле не может быть пустым</string>
+    <string name="name_min_length">Имя и фамилия должны сожержать по крайней мере 2 символа</string>
+    <string name="city_is_empty">Город не может быть пустым</string>
+    <string name="phone_is_empty">Номер телефона не может быть пустым</string>
+    <string name="phone_only_number">Телефон должен содержать только цифры</string>
+    <string name="invalid_phone_number">Некорректный номер телефона</string>
+    <string name="pass_is_empty">Пароль не может быть пустым</string>
+    <string name="pass_min_length">Пароль должен содержать не менее 8 символов</string>
+    <string name="invalid_email">Некорректный email</string>
 </resources>

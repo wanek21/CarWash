@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/car_item_height"
     android:layout_marginTop="15dp"
-    android:background="@color/back_car_item">
+    android:background="@drawable/back_car_item">
 
     <ImageView
         android:id="@+id/imgCar"

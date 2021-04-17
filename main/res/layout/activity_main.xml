@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context="ru.carwash.view.activities.MainActivity">
+    tools:context="ru.carwash.screens.main.MainActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -25,8 +25,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:itemBackground="@color/back_nav_bar"
-        app:itemTextColor="@color/nav_item"
-        app:itemIconTint="@color/nav_item"
+        app:itemTextColor="@drawable/navigation_item_back"
+        app:itemIconTint="@drawable/navigation_item_back"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/nav_bar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

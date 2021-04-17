@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/carsList"
         tools:layout="@layout/fragment_cars"
-        android:name="ru.carwash.view.fragments.CarsFragment">
+        android:name="ru.carwash.screens.main.cars.CarsFragment">
 
         <action
             android:id="@+id/carsList_to_addCar"
@@ -23,14 +23,14 @@
     <fragment
         android:id="@+id/addCar"
         tools:layout="@layout/fragment_add_car"
-        android:name="ru.carwash.view.fragments.AddCarFragment">
+        android:name="ru.carwash.screens.main.cars.AddCarFragment">
 
     </fragment>
 
     <fragment
         android:id="@+id/viewCar"
         tools:layout="@layout/fragment_car_view"
-        android:name="ru.carwash.view.fragments.CarViewFragment">
+        android:name="ru.carwash.screens.main.cars.CarViewFragment">
 
         <action
             android:id="@+id/viewCar_to_editCar"
@@ -38,18 +38,18 @@
 
         <argument
             android:name="car"
-            app:argType="ru.carwash.models.Car"/>
+            app:argType="ru.carwash.dto.Car"/>
 
     </fragment>
 
     <fragment
         android:id="@+id/editCar"
         tools:layout="@layout/fragment_edit_car"
-        android:name="ru.carwash.view.fragments.EditCarFragment">
+        android:name="ru.carwash.screens.main.cars.EditCarFragment">
 
         <argument
             android:name="car"
-            app:argType="ru.carwash.models.Car"/>
+            app:argType="ru.carwash.dto.Car"/>
         <action
             android:id="@+id/action_editCar_to_viewCar"
             app:destination="@id/viewCar" />
