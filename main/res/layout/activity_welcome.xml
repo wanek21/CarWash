@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/welcome_background"
-    tools:context="ru.carwash.screens.registration.WelcomeActivity">
+    tools:context="ru.carwash.ui.auth.WelcomeActivity">
 
     <ImageView
         android:id="@+id/imgLogo"

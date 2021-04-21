@@ -12,20 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/CarWashTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="ru.carwash.screens.registration.EnterCodeActivity"
+        <activity android:name="ru.carwash.ui.auth.EnterCodeActivity"
             android:theme="@style/EnterCodeTheme"
             android:windowSoftInputMode="stateVisible"/>
-        <activity android:name="ru.carwash.screens.registration.EnterNumberActivity"
+        <activity android:name="ru.carwash.ui.auth.EnterNumberActivity"
             android:theme="@style/EnterCodeTheme"
             android:windowSoftInputMode="stateVisible"/>
         <activity
-            android:name="ru.carwash.screens.registration.SignupActivity"
+            android:name="ru.carwash.ui.auth.SignupActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="ru.carwash.screens.registration.LoginActivity"
+            android:name="ru.carwash.ui.auth.LoginActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="ru.carwash.screens.main.MainActivity"
+            android:name="ru.carwash.ui.main.MainActivity"
             android:theme="@style/CarWashTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="ru.carwash.screens.registration.WelcomeActivity"
+            android:name="ru.carwash.ui.auth.WelcomeActivity"
             android:theme="@style/WelcomeTheme" />
     </application>
 

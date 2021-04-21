@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/profile"
         tools:layout="@layout/fragment_profile"
-        android:name="ru.carwash.screens.main.profile.ProfileFragment">
+        android:name="ru.carwash.ui.main.profile.ProfileFragment">
 
         <action
             android:id="@+id/action_profile_to_editProfile"
@@ -18,6 +18,6 @@
     <fragment
         android:id="@+id/editProfile"
         tools:layout="@layout/fragment_edit_profile"
-        android:name="ru.carwash.screens.main.profile.EditProfileFragment"/>
+        android:name="ru.carwash.ui.main.profile.EditProfileFragment"/>
 
 </navigation>

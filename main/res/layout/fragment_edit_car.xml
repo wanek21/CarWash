@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="ru.carwash.screens.main.cars.EditCarFragment">
+    tools:context="ru.carwash.ui.main.cars.EditCarFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                     android:id="@+id/btnBack"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@color/primary"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -52,7 +52,7 @@
                     android:id="@+id/btnSave"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@color/primary"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:text="@string/save"
                     android:layout_margin="1dp"
                     android:elevation="0dp"
@@ -68,7 +68,7 @@
             android:id="@+id/clEditData"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -180,8 +180,10 @@
                 android:layout_height="@dimen/register_block_height"
                 android:background="@color/white"
                 android:ems="10"
-                android:inputType="text"
+                android:inputType="textCapCharacters"
                 android:paddingEnd="18dp"
+                android:hint="A999AA"
+                android:textColorHint="#9A9A9A"
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -218,7 +220,9 @@
                 android:layout_height="@dimen/register_block_height"
                 android:background="@color/white"
                 android:ems="10"
-                android:inputType="text"
+                android:inputType="textCapCharacters"
+                android:hint="Например: 52"
+                android:textColorHint="#9A9A9A"
                 android:paddingEnd="18dp"
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
@@ -250,16 +254,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view4" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/etCategory"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/register_block_height"
-                android:background="@color/white"
-                android:ems="10"
-                android:inputType="textMultiLine"
-                android:paddingEnd="18dp"
-                android:textAlignment="textEnd"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/tvHintCategory"
@@ -273,7 +271,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvHintCategory" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -182,4 +182,9 @@
     <string name="pass_is_empty">Пароль не может быть пустым</string>
     <string name="pass_min_length">Пароль должен содержать не менее 8 символов</string>
     <string name="invalid_email">Некорректный email</string>
+
+    <string-array name="categories_array">
+        <item>Легковая</item>
+        <item>Грузовая</item>
+    </string-array>
 </resources>

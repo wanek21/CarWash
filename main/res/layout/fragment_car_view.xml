@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="ru.carwash.screens.main.cars.CarViewFragment">
+    tools:context="ru.carwash.ui.main.cars.CarViewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                     android:id="@+id/btnBack"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@color/primary"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:background="@color/primary"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:elevation="0dp"
                     android:stateListAnimator="@null"
                     app:layout_constraintBottom_toBottomOf="parent"

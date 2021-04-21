@@ -3,7 +3,9 @@ package ru.carwash.dto
 import android.os.Parcel
 import android.os.Parcelable
 
+/* Класс является Parcelable для возможности передачи его через navigate*/
 data class Car(
+        var id: Int,
         var brand: String? = null,
         var model: String? = null,
         var carNumber: String? = null,
@@ -11,6 +13,7 @@ data class Car(
         var category: String? = null ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
+            parcel.readInt(),
             parcel.readString(),
             parcel.readString(),
             parcel.readString(),
@@ -19,6 +22,7 @@ data class Car(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
         parcel.writeString(brand)
         parcel.writeString(model)
         parcel.writeString(carNumber)
@@ -39,4 +43,5 @@ data class Car(
             return arrayOfNulls(size)
         }
     }
+
 }
