@@ -5,7 +5,7 @@
     android:id="@+id/clOrderItem"
     android:layout_width="match_parent"
     android:layout_height="@dimen/order_item_height"
-    android:background="@color/white">
+    android:background="@drawable/back_order_item">
 
 
     <ImageView
@@ -48,12 +48,12 @@
         android:text="Автомойка 'МИР'"
         android:textColor="@color/black"
         android:textSize="@dimen/order_car_wash"
-        app:layout_constraintBottom_toTopOf="@+id/tvData"
+        app:layout_constraintBottom_toTopOf="@+id/tvDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
 
     <TextView
-        android:id="@+id/tvData"
+        android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -65,12 +65,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCarWash" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/line_decoration"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
     <TextView
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
@@ -79,8 +73,26 @@
         android:text="450Р"
         android:textColor="@color/black"
         android:textSize="@dimen/order_price"
-        app:layout_constraintBottom_toBottomOf="@+id/tvData"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDate"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/tvData" />
+        app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_decoration"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="13:40"
+        android:textColor="@color/black"
+        android:textSize="@dimen/order_data"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+        app:layout_constraintStart_toEndOf="@+id/tvDate"
+        app:layout_constraintTop_toTopOf="@+id/tvDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

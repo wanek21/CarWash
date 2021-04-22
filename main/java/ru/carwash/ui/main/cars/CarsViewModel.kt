@@ -67,10 +67,7 @@ class CarsViewModel @Inject constructor(private val carsRepository: CarsReposito
 
             _editingCarStatus.also {
                 if(it.value?.status == Status.SUCCESS) // если изменение авто прошло успешно
-                {
                     successEditingCar()
-                    Log.d("my","success editing")
-                } else Log.d("my","error editing: ${it.value?.message}")
             }
         }
     }

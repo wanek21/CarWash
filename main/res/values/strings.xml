@@ -187,4 +187,6 @@
         <item>Легковая</item>
         <item>Грузовая</item>
     </string-array>
+    <string name="accepted_status_info">Подъезжайте к назначенному времени</string>
+    <string name="canceled_status_info">Заказ отменен</string>
 </resources>

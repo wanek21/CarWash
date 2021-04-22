@@ -1,84 +1,65 @@
-package ru.carwash.ui.main.orders;
+package ru.carwash.ui.main.orders
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
+import androidx.constraintlayout.widget.ConstraintLayout
+import android.widget.TextView
+import com.carwash.carwash.R
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.os.Bundle
+import android.view.View
+import androidx.navigation.Navigation.findNavController
+import ru.carwash.dto.Order
+import java.util.ArrayList
 
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.FragmentActivity;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.RecyclerView;
+class OrdersAdapter(private val activity: FragmentActivity,
+                    private val orders: ArrayList<Order>)
+    : RecyclerView.Adapter<OrdersAdapter.ViewHolder>() {
 
-import com.carwash.carwash.R;
-
-import java.util.ArrayList;
-
-import ru.carwash.dto.Order;
-
-public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder> {
-
-    private FragmentActivity activity; // для доступа к FragmentManager
-    private ArrayList<Order> orders;
-
-    public OrdersAdapter(FragmentActivity activity, ArrayList<Order> orders) {
-        this.activity = activity;
-        this.orders = orders;
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val parent: ConstraintLayout = view.findViewById(R.id.clOrderItem)
+        val tvStatus: TextView = view.findViewById(R.id.tvStatusValue)
+        val tvCarWash: TextView = view.findViewById(R.id.tvCarWash)
+        val tvDate: TextView = view.findViewById(R.id.tvDate)
+        val tvTime: TextView = view.findViewById(R.id.tvTime)
+        val tvPrice: TextView = view.findViewById(R.id.tvPrice)
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.order_item, parent, false)
+        return ViewHolder(view)
+    }
 
-        private final ConstraintLayout parent;
-        private final TextView tvStatus;
-        private final TextView tvCarWash;
-        private final TextView tvData;
-
-        public ViewHolder(@NonNull View view) {
-            super(view);
-
-            parent = view.findViewById(R.id.clOrderItem);
-            tvStatus = view.findViewById(R.id.tvStatusValue);
-            tvCarWash = view.findViewById(R.id.tvCarWash);
-            tvData = view.findViewById(R.id.tvData);
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.parent.setOnClickListener {
+            val bundleOrder = Bundle()
+            bundleOrder.putParcelable("order", orders[position])
+            findNavController(activity, R.id.fragment_container).navigate(R.id.action_ordersList_to_viewOrder, bundleOrder)
         }
 
-        public ConstraintLayout getParent() {return parent;}
-        public TextView getTvStatus() {return tvStatus;}
-        public TextView getTvCarWash() {return tvCarWash;}
-        public TextView getTvData() {return tvData;}
-    }
-
-    @NonNull
-    @Override
-    public OrdersAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.order_item, parent, false);
-        return new OrdersAdapter.ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.getParent().setOnClickListener(v -> {
-            Bundle bundleOrder = new Bundle();
-            bundleOrder.putParcelable("order",orders.get(position));
-            Navigation.findNavController(activity,R.id.fragment_container).navigate(R.id.action_ordersList_to_viewOrder,bundleOrder);
-        });
-        if (orders.get(position).getStatus() == Order.ACCEPTED_STATUS) {
-            holder.getTvStatus().setText(R.string.accepted_status); // ставим текст "Принят"
-            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.accepted_status)); // задаем соответствующий цвет текста
-        } else if(orders.get(position).getStatus() == Order.COMPLETED_STATUS) {
-            holder.getTvStatus().setText(R.string.completed_status);
-            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.completed_status));
-        } else if(orders.get(position).getStatus() == Order.CANCELED_STATUS) {
-            holder.getTvStatus().setText(R.string.canceled_status);
-            holder.getTvStatus().setTextColor(activity.getResources().getColor(R.color.canceled_status));
+        when (orders[position].status) {
+            Order.ACCEPTED_STATUS -> {
+                holder.tvStatus.setText(R.string.accepted_status) // ставим текст "Принят"
+                holder.tvStatus.setTextColor(activity.resources.getColor(R.color.accepted_status)) // задаем соответствующий цвет текста
+            }
+            Order.COMPLETED_STATUS -> {
+                holder.tvStatus.setText(R.string.completed_status)
+                holder.tvStatus.setTextColor(activity.resources.getColor(R.color.completed_status))
+            }
+            Order.CANCELED_STATUS -> {
+                holder.tvStatus.setText(R.string.canceled_status)
+                holder.tvStatus.setTextColor(activity.resources.getColor(R.color.canceled_status))
+            }
         }
+        holder.tvCarWash.text = orders[position].carWash?.name
+        holder.tvDate.text = orders[position].date.toString()
+        holder.tvTime.text = orders[position].time.toString()
+        holder.tvPrice.text = orders[position].price.toString() + "Р"
     }
 
-    @Override
-    public int getItemCount() {
-        return orders.size();
+    override fun getItemCount(): Int {
+        return orders.size
     }
 }

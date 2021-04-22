@@ -1,6 +1,6 @@
 package ru.carwash.utils
 
-/* Сообщения из ошибок записываются в message, НЕ в data */
+/* Сообщения из ошибок записываются в message, НЕ в date */
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 
     companion object {

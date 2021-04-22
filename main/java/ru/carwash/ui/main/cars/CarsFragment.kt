@@ -47,8 +47,8 @@ class CarsFragment : Fragment() {
 
     var cars: ArrayList<Car> = ArrayList()
 
-    /* recList не будет обновляеться динамически, только инициализироваться,
-     поэтому инициализацию решил делать в обсервере */
+    /* recList очень редко обновляется,
+     поэтому его инициализацию решил делать в обсервере */
     private val carsObserver = Observer<Resource<ArrayList<Car>>> {
         Log.d("my","carsObserver")
         if(it.status == Status.SUCCESS) {

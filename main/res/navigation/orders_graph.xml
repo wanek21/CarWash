@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_viewOrder_to_leaveReview"
             app:destination="@id/leaveReview" />
+        <action
+            android:id="@+id/action_viewOrder_to_orderList"
+            app:destination="@id/ordersList"/>
 
     </fragment>
 

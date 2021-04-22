@@ -26,7 +26,7 @@ fun BottomNavigationView.setupWithNavController(
 
     // Map of tags
     val graphIdToTagMap = SparseArray<String>()
-    // Result. Mutable live data with the selected controlled
+    // Result. Mutable live date with the selected controlled
     val selectedNavController = MutableLiveData<NavController>()
 
     var firstFragmentGraphId = 0
