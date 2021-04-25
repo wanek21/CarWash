@@ -60,6 +60,18 @@
             android:background="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/line2" />
 
+        <TextView
+            android:id="@+id/tvServicesLoadingStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Загрузка..."
+            android:textColor="#4E4E4E"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rvServices" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

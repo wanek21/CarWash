@@ -4,6 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import ru.carwash.data.remote.WebService
+import ru.carwash.dto.CarWash
 import ru.carwash.dto.Order
 import ru.carwash.dto.Review
 import ru.carwash.dto.Service
@@ -16,7 +17,7 @@ class OrdersRepository @Inject constructor(
 
     suspend fun createOrder(order: Order): Resource<String> {
         return withContext(Dispatchers.IO) {
-            delay(500)
+            delay(1200)
             webService.createOrder(order)
         }
     }
@@ -30,6 +31,12 @@ class OrdersRepository @Inject constructor(
         return withContext(Dispatchers.IO) {
             delay(500)
             webService.sendReview(review)
+        }
+    }
+    suspend fun getAvailableCarWashes(): Resource<ArrayList<CarWash>> {
+        return withContext(Dispatchers.IO) {
+            delay(700)
+            webService.getAvailableCarWashes()
         }
     }
     suspend fun getAvailableServices(): Resource<ArrayList<Service>> {

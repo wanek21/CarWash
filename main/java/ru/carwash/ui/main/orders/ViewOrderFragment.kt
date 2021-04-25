@@ -13,10 +13,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.carwash.carwash.R
-import kotlinx.android.synthetic.main.fragment_car_view.*
+import kotlinx.android.synthetic.main.order_item.*
 import ru.carwash.dto.Order
-import ru.carwash.dto.Service
-import java.util.*
 
 /**
  * A simple [Fragment] subclass.
@@ -93,7 +91,7 @@ class ViewOrderFragment : Fragment {
         rvServices = view.findViewById(R.id.rvServices)
 
         rvServices?.layoutManager = LinearLayoutManager(context)
-        val servicesAdapter = ServicesAdapter(activity, order!!.services, false)
+        val servicesAdapter = ServicesAdapter(requireActivity(), order?.services!!, false)
         rvServices?.adapter = servicesAdapter
 
         fullOrderInfo()
@@ -125,7 +123,7 @@ class ViewOrderFragment : Fragment {
             }
         }
 
-        tvCarName?.text = order?.carWash?.name
+        tvCarWashName?.text = order?.carWash?.name
         tvCarWashAddress?.text = order?.carWash?.address
         tvCarName?.text = order?.car?.brand + " " + order?.car?.model
         tvCarNumber?.text = order?.car?.carNumber

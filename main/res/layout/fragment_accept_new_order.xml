@@ -29,7 +29,7 @@
                     android:id="@+id/btnBack"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@color/primary"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -53,6 +53,7 @@
         </Toolbar>
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,11 +69,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:padding="3dp"
                     android:text="@string/car_wash"
                     android:textColor="@color/black"
                     android:textSize="@dimen/ordering_steps_subtitle"
                     android:textStyle="bold"
-                    android:padding="3dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -81,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/line_decoration"
-                    app:layout_constraintTop_toBottomOf="@id/tvCarWashTitle"/>
+                    app:layout_constraintTop_toBottomOf="@id/tvCarWashTitle" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clCarWashPick"
@@ -101,28 +102,28 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvCarWah"
+                        android:id="@+id/tvCarWash"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:text="Автомойка МИР"
+                        android:text="..."
                         android:textColor="@color/black"
                         android:textSize="@dimen/ordering_car_wash_title"
                         app:layout_constraintBottom_toTopOf="@+id/tvAddress"
                         app:layout_constraintStart_toEndOf="@+id/imgMap"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_chainStyle="packed"/>
+                        app:layout_constraintVertical_chainStyle="packed" />
 
                     <TextView
                         android:id="@+id/tvAddress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Лейтенанта Шмидта, 1"
-                        android:textSize="@dimen/ordering_car_wash_address"
                         android:textColor="@color/hint"
+                        android:textSize="@dimen/ordering_car_wash_address"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/tvCarWah"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCarWah" />
+                        app:layout_constraintStart_toStartOf="@+id/tvCarWash"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCarWash" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -130,24 +131,24 @@
                     android:id="@+id/line3"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/line_decoration"/>
+                    android:background="@color/line_decoration" />
 
                 <TextView
                     android:id="@+id/tvCarTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:padding="3dp"
                     android:text="@string/nav_auto"
                     android:textColor="@color/black"
                     android:textSize="@dimen/ordering_steps_subtitle"
-                    android:textStyle="bold"
-                    android:padding="3dp" />
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/line4"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/line_decoration"/>
+                    android:background="@color/line_decoration" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/clCarItem"
@@ -204,24 +205,24 @@
                     android:id="@+id/line5"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/line_decoration"/>
+                    android:background="@color/line_decoration" />
 
                 <TextView
                     android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:padding="3dp"
                     android:text="@string/date"
                     android:textColor="@color/black"
                     android:textSize="@dimen/ordering_steps_subtitle"
-                    android:padding="3dp"
                     android:textStyle="bold" />
 
                 <View
                     android:id="@+id/line6"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/line_decoration"/>
+                    android:background="@color/line_decoration" />
 
                 <TextView
                     android:id="@+id/tvDateValue"
@@ -238,7 +239,7 @@
                     android:id="@+id/line7"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/line_decoration"/>
+                    android:background="@color/line_decoration" />
 
 
                 <TextView
@@ -246,17 +247,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:padding="3dp"
                     android:text="@string/time"
                     android:textColor="@color/black"
                     android:textSize="@dimen/ordering_steps_subtitle"
-                    android:padding="3dp"
                     android:textStyle="bold" />
 
                 <View
                     android:id="@+id/line8"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/line_decoration"/>
+                    android:background="@color/line_decoration" />
 
                 <TextView
                     android:id="@+id/tvTimeValue"
@@ -280,17 +281,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:padding="3dp"
                     android:text="@string/services"
                     android:textColor="@color/black"
                     android:textSize="@dimen/ordering_steps_subtitle"
-                    android:textStyle="bold"
-                    android:padding="3dp" />
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/line10"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/line_decoration"/>
+                    android:background="@color/line_decoration" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvServices"
@@ -303,25 +304,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/line_decoration"
-                    app:layout_constraintTop_toBottomOf="@id/rvServices"/>
+                    app:layout_constraintTop_toBottomOf="@id/rvServices" />
 
                 <TextView
                     android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:padding="3dp"
                     android:text="@string/cost"
                     android:textColor="@color/black"
                     android:textSize="@dimen/ordering_steps_subtitle"
-                    android:textStyle="bold"
-                    android:padding="3dp" />
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/line12"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/line_decoration"
-                    app:layout_constraintTop_toBottomOf="@id/tvPrice"/>
+                    app:layout_constraintTop_toBottomOf="@id/tvPrice" />
 
                 <TextView
                     android:id="@+id/tvCost"
@@ -336,7 +337,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"/>
+                    android:layout_height="60dp" />
 
             </LinearLayout>
 
@@ -353,6 +354,17 @@
             android:textColor="@color/white"
             android:background="@drawable/default_back_btn"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnToOrder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

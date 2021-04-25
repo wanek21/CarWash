@@ -19,6 +19,7 @@ data class Order(
         var services: @RawValue ArrayList<Service>? = null, // список услуг в заказе
         var price: Double = 0.0
 ) : Parcelable {
+
         companion object {
                 const val CANCELED_STATUS = 1
                 const val COMPLETED_STATUS = 2

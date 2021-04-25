@@ -14,7 +14,7 @@ class CarsRepository @Inject constructor(
 ){
     suspend fun getCars() : Resource<ArrayList<Car>> {
         return withContext(Dispatchers.IO) {
-            delay(2000L)
+            delay(200L)
             webService.getCars()
         }
     }

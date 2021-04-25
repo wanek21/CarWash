@@ -51,7 +51,7 @@ class OrdersFragment : Fragment() {
                 ordersAdapter = OrdersAdapter(requireActivity(),orders)
                 recyclerViewOrders?.adapter = ordersAdapter
                 progressBar?.visibility = View.INVISIBLE
-                topLine?.visibility = View.INVISIBLE
+                topLine?.visibility = View.VISIBLE
                 Log.d("my","orders size: ${orders.size}")
             }
             Status.ERROR -> {

@@ -8,45 +8,51 @@ import ru.carwash.controllers.ServerApi
 import ru.carwash.dto.*
 import ru.carwash.utils.Resource
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class WebService @Inject constructor(
         @ApplicationContext val context: Context,
         private val serverApi: ServerApi) {
 
     //test
+    private var carWashes: ArrayList<CarWash> = ArrayList()
     private var carsList: ArrayList<Car> = ArrayList()
     private var ordersList: ArrayList<Order> = ArrayList()
     private var servicesList: ArrayList<Service> = ArrayList()
 
     // test
     init {
+
+        carWashes.add(CarWash(name = "Автомойка \"МИР\"", address = "Лейтенанта Шмидта, 1"))
+
         carsList.add(Car(1, "Audi", "TT", "A999AA", "152", "Легковая"))
         carsList.add(Car(2, "Toyota", "Camry", "A234AA", "52", "Легковая"))
         carsList.add(Car(3, "ВАЗ", "2109", "р943од", "52", "Легковая"))
 
         servicesList.add(Service(
                 name = "Сполоснуть водой",
-                price = 250
+                price = 250.0
         ))
         servicesList.add(Service(
                 name = "Техническая мойка",
-                price = 150
+                price = 150.0
         ))
         servicesList.add(Service(
                 name = "Комплексная мойка",
-                price = 350
+                price = 350.0
         ))
         servicesList.add(Service(
                 name = "Пылесос",
-                price = 50
+                price = 50.0
         ))
         servicesList.add(Service(
                 name = "Протереть стекла",
-                price = 100
+                price = 100.0
         ))
         servicesList.add(Service(
                 name = "Наружная мойка с коврами",
-                price = 100
+                price = 100.0
         ))
         val order1 = Order(
                 status = Order.CANCELED_STATUS,
@@ -59,7 +65,7 @@ class WebService @Inject constructor(
                 )
         val order2 = Order(
                 status = Order.COMPLETED_STATUS,
-                carWash = CarWash(name = "Автомойка \"МИР\"", address = "Лейтенанта Шмидта, 1"),
+                carWash = carWashes[0],
                 car = carsList[0],
                 date = "23.04.2021",
                 time = "16:30",
@@ -68,7 +74,7 @@ class WebService @Inject constructor(
         )
         val order3 = Order(
                 status = Order.ACCEPTED_STATUS,
-                carWash = CarWash(name = "Автомойка \"МИР\"", address = "Лейтенанта Шмидта, 1"),
+                carWash = carWashes[0],
                 car = carsList[0],
                 date = "23.04.2021",
                 time = "19:10",
@@ -147,6 +153,7 @@ class WebService @Inject constructor(
     }
 
     fun createOrder(order: Order): Resource<String> {
+        ordersList.add(order)
         return Resource.success(null)
     }
 
@@ -154,6 +161,9 @@ class WebService @Inject constructor(
         return Resource.success(null)
     }
 
+    fun getAvailableCarWashes(): Resource<ArrayList<CarWash>> {
+        return Resource.success(carWashes)
+    }
     fun getAvailableServices(): Resource<ArrayList<Service>> {
         return Resource.success(servicesList)
     }

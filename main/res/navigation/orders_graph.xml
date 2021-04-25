@@ -59,6 +59,9 @@
         tools:layout="@layout/fragment_accept_new_order"
         android:name="ru.carwash.ui.main.orders.AcceptNewOrderFragment">
 
+        <action
+            android:id="@+id/action_acceptNewOrder_to_ordersList"
+            app:destination="@id/ordersList"/>
     </fragment>
 
 </navigation>

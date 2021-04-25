@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -36,7 +37,7 @@ class CarsFragment : Fragment() {
 
     private var mParam1: String? = null
     private var mParam2: String? = null
-    private var progressBar: ProgressBar? = null
+    private var tvCarsLoadingStatus: TextView? = null
     private var btnNext: Button? = null
     private var recyclerViewCars: RecyclerView? = null
     private lateinit var carsAdapter: CarsAdapter
@@ -51,16 +52,24 @@ class CarsFragment : Fragment() {
      поэтому его инициализацию решил делать в обсервере */
     private val carsObserver = Observer<Resource<ArrayList<Car>>> {
         Log.d("my","carsObserver")
-        if(it.status == Status.SUCCESS) {
-            cars = it.data!!
-            carsAdapter = CarsAdapter(requireActivity(),cars)
-            recyclerViewCars?.adapter = carsAdapter
-            progressBar?.visibility = View.INVISIBLE
-        } else if (it.status == Status.ERROR) {
-            progressBar?.visibility = View.INVISIBLE
-            Toast.makeText(context, "Ошибка при получении списка машин", Toast.LENGTH_LONG).show()
-        } else if(it.status == Status.LOADING)
-            progressBar?.visibility = View.VISIBLE
+
+        when(it.status) {
+            Status.SUCCESS -> {
+                cars = it.data!!
+                carsAdapter = CarsAdapter(requireActivity(),cars)
+                recyclerViewCars?.adapter = carsAdapter
+                tvCarsLoadingStatus?.visibility = View.GONE
+            }
+            Status.LOADING -> {
+                tvCarsLoadingStatus?.visibility = View.VISIBLE
+                tvCarsLoadingStatus?.text = "Загрузка..."
+            }
+            Status.ERROR -> {
+                tvCarsLoadingStatus?.visibility = View.VISIBLE
+                tvCarsLoadingStatus?.text = "Ошибка при получении списка машин. Нажмите, чтобы попробовать снова"
+            }
+        }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +84,10 @@ class CarsFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_cars, container, false)
-        progressBar = view.findViewById(R.id.progressBar)
+        tvCarsLoadingStatus = view.findViewById(R.id.tvCarsLoadingStatus)
+        tvCarsLoadingStatus?.setOnClickListener {
+            viewModel.getCars()
+        }
         btnNext = view.findViewById(R.id.btnNext)
         recyclerViewCars = view.findViewById(R.id.rvCars)
         recyclerViewCars?.layoutManager = LinearLayoutManager(context)

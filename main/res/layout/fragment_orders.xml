@@ -48,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/line_decoration"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@id/rvOrders" />
 
         <androidx.recyclerview.widget.RecyclerView

@@ -41,18 +41,18 @@ class CarsViewModel @Inject constructor(private val carsRepository: CarsReposito
 
     init {
         _cars.value = Resource.loading(null)
-        Log.d("my","carsViewModel init")
+        Log.d("my", "carsViewModel init")
     }
 
     fun addCar(car: AddEditCar) {
         var isCarValid = isCarInfoValid(car)
         viewModelScope.launch {
-            _addingCarStatus.value = if(isCarValid.status == Status.SUCCESS) {
+            _addingCarStatus.value = if (isCarValid.status == Status.SUCCESS) {
                 carsRepository.addCar(car)
             } else isCarValid
 
             _addingCarStatus.also {
-                if(it.value?.status == Status.SUCCESS) // если добавление авто прошло успешно
+                if (it.value?.status == Status.SUCCESS) // если добавление авто прошло успешно
                     successAddingCar()
             }
         }
@@ -61,12 +61,12 @@ class CarsViewModel @Inject constructor(private val carsRepository: CarsReposito
     fun editCar(car: AddEditCar) {
         val isCarValid = isCarInfoValid(car)
         viewModelScope.launch {
-            _editingCarStatus.value = if(isCarValid.status == Status.SUCCESS) {
+            _editingCarStatus.value = if (isCarValid.status == Status.SUCCESS) {
                 carsRepository.editCar(car)
             } else isCarValid
 
             _editingCarStatus.also {
-                if(it.value?.status == Status.SUCCESS) // если изменение авто прошло успешно
+                if (it.value?.status == Status.SUCCESS) // если изменение авто прошло успешно
                     successEditingCar()
             }
         }
@@ -75,48 +75,52 @@ class CarsViewModel @Inject constructor(private val carsRepository: CarsReposito
     private fun successAddingCar() {
         _successAddingCar.call()
     }
+
     private fun successEditingCar() {
         _successEditingCar.call()
     }
+
     fun getCars() {
         viewModelScope.launch {
+            if (_cars.value == null)
+                _cars.value = Resource.loading(null)
             _cars.value = carsRepository.getCars()
         }
     }
 
     private fun isCarInfoValid(car: AddEditCar): Resource<String> {
-        if(car.brand != null) {
-            if(car.brand.equals(""))
-                return Resource.error("Марка авто не должна быть пустой",null)
-            else if(!car.brand!!.matches(Regex("[A-Za-z0-9а-яА-Я\\s]+")))
+        if (car.brand != null) {
+            if (car.brand.equals(""))
+                return Resource.error("Марка авто не должна быть пустой", null)
+            else if (!car.brand!!.matches(Regex("[A-Za-z0-9а-яА-Я\\s]+")))
                 return Resource.error("Марка авто может содержать только кириллицу, латинские буквы и цифры", null)
-        } else return Resource.error("Марка авто не должна быть пустой",null)
+        } else return Resource.error("Марка авто не должна быть пустой", null)
 
-        if(car.model != null) {
-            if(car.model.equals(""))
-                return Resource.error("Модель авто не должна быть пустой",null)
-            else if(!car.model!!.matches(Regex("[A-Za-z0-9а-яА-Я.\\s]+")))
+        if (car.model != null) {
+            if (car.model.equals(""))
+                return Resource.error("Модель авто не должна быть пустой", null)
+            else if (!car.model!!.matches(Regex("[A-Za-z0-9а-яА-Я.\\s]+")))
                 return Resource.error("Модель авто может содержать только кириллицу, латинские буквы, цифры и точку", null)
-        } else return Resource.error("Модель авто не должна быть пустой",null)
+        } else return Resource.error("Модель авто не должна быть пустой", null)
 
-        if(car.carNumber != null) {
-            if(car.carNumber.equals(""))
-                return Resource.error("Номер авто не должн быть пустым",null)
-            else if(!car.carNumber!!.matches(Regex("[A-Za-z0-9-_а-яА-Я\\s]+")))
+        if (car.carNumber != null) {
+            if (car.carNumber.equals(""))
+                return Resource.error("Номер авто не должн быть пустым", null)
+            else if (!car.carNumber!!.matches(Regex("[A-Za-z0-9-_а-яА-Я\\s]+")))
                 return Resource.error("Номер авто может содержать только кириллицу, латинские буквы, цифры, а также \"_\" и \"-\"", null)
 
             car.carNumber = car.carNumber!!.toUpperCase()
-        } else return Resource.error("Номер авто не должен быть пустым",null)
+        } else return Resource.error("Номер авто не должен быть пустым", null)
 
-        if(car.region != null) {
-            if(!car.region!!.matches(Regex("^[a-zA-Z0-9_.-]*\$")))
-                return Resource.error("Регион может содержать только кириллицу, латинские буквы и цифры",null)
+        if (car.region != null) {
+            if (!car.region!!.matches(Regex("^[a-zA-Z0-9_.-]*\$")))
+                return Resource.error("Регион может содержать только кириллицу, латинские буквы и цифры", null)
         } else car.region = ""
 
-        if(car.category != null) {
-            if(!car.category!!.matches(Regex("[A-Za-zа-яА-Я\\s]+")))
-                return Resource.error("Категория может содержать только кириллицу и латинские буквы",null)
-        } else return Resource.error("Категория не может быть пустой",null)
+        if (car.category != null) {
+            if (!car.category!!.matches(Regex("[A-Za-zа-яА-Я\\s]+")))
+                return Resource.error("Категория может содержать только кириллицу и латинские буквы", null)
+        } else return Resource.error("Категория не может быть пустой", null)
 
         return Resource.success(null)
     }
