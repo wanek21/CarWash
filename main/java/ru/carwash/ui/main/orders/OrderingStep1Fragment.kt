@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.Group
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -16,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.carwash.carwash.R
 import ru.carwash.dto.Car
 import ru.carwash.dto.CarWash
-import ru.carwash.dto.Order
 import ru.carwash.utils.Resource
 import ru.carwash.utils.Status
 import java.util.*
@@ -25,7 +23,7 @@ class OrderingStep1Fragment : Fragment() {
 
     // TODO("add choice of car wash")
 
-    private var clCarWashPick: ConstraintLayout? = null
+    private var carWashGroup: Group? = null
     private var recyclerViewCars: RecyclerView? = null
 
     private var tvCarsWashesLoadingStatus: TextView? = null
@@ -42,16 +40,16 @@ class OrderingStep1Fragment : Fragment() {
     private val carWashesObserver = Observer<Resource<ArrayList<CarWash>>> {
         when(it.status) {
             Status.SUCCESS -> {
-                clCarWashPick?.visibility = View.VISIBLE
+                carWashGroup?.visibility = View.VISIBLE
                 tvCarsWashesLoadingStatus?.visibility = View.GONE
             }
             Status.LOADING -> {
-                clCarWashPick?.visibility = View.INVISIBLE
+                carWashGroup?.visibility = View.INVISIBLE
                 tvCarsWashesLoadingStatus?.visibility = View.VISIBLE
                 tvCarsWashesLoadingStatus?.text = "Загрузка автомоек..."
             }
             Status.ERROR -> {
-                clCarWashPick?.visibility = View.INVISIBLE
+                carWashGroup?.visibility = View.INVISIBLE
                 tvCarsWashesLoadingStatus?.visibility = View.VISIBLE
                 tvCarsWashesLoadingStatus?.text = "Ошибка при загрузке автомоек. Нажмите сюда, чтобы загрузить снова"
             }
@@ -77,7 +75,7 @@ class OrderingStep1Fragment : Fragment() {
     }
     private val selectedCarObserver = Observer<Car> {
         parentFragment.order.car = it
-        parentFragment.order.carWash = CarWash("Автомойка \"МИР\"","Лейтенанта Шмидта, 1") // test
+        parentFragment.order.carWash = CarWash("Автомойка \"МИР\"","Лейтенанта Шмидта, 1") // TODO
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,6 +88,7 @@ class OrderingStep1Fragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ordering_step1, container, false)
 
+        carWashGroup = view.findViewById(R.id.carWashGroup)
         tvCarsWashesLoadingStatus = view.findViewById(R.id.tvCarWashesLoadingStatus)
         tvCarsWashesLoadingStatus?.setOnClickListener {
             viewModel.getAvailableCarWashes()

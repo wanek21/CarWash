@@ -32,12 +32,12 @@ class CreateOrderViewModel @Inject constructor(
     private val _creatingOrderComplete: MutableLiveData<Resource<String>> = MutableLiveData()
     val creatingOrderComplete: LiveData<Resource<String>> = _creatingOrderComplete
 
-    // для навигации
+    // для правильной работы навигации
     private val _successCreatingOrder = SingleLiveEvent<Any>()
     val successCreatingOrder: LiveData<Any>
         get() = _successCreatingOrder
 
-    // для навигации
+    // для правильной работы навигации
     private val _successValidatingOrder = SingleLiveEvent<Any>()
     val successValidatingOrder: LiveData<Any>
         get() = _successValidatingOrder
@@ -51,10 +51,7 @@ class CreateOrderViewModel @Inject constructor(
     private val _services: MutableLiveData<Resource<ArrayList<Service>>> = MutableLiveData()
     val services: LiveData<Resource<ArrayList<Service>>> = _services
 
-    //val order: MutableLiveData<Order> = MutableLiveData()
-
     init {
-        //order.value = Order(Order.ACCEPTED_STATUS)
         getAvailableCarWashes()
         getClientsCars()
         getAvailableServices()
@@ -104,26 +101,6 @@ class CreateOrderViewModel @Inject constructor(
             _services.value = ordersRepository.getAvailableServices()
         }
     }
-
-    /*fun setCarWash(carWash: CarWash) {
-        order.value?.carWash = carWash
-    }
-
-    fun setCar(car: Car) {
-        order.value?.car = car
-    }
-
-    fun setDate(day: Int, month: Int, year: Int) {
-        order.value?.date = "$day.$month.$year"
-    }
-
-    fun setTime(hour: Int, minute: Int) {
-        order.value?.time = "${hour}:$minute"
-    }
-
-    fun setServices(services: ArrayList<Service>) {
-        order.value?.services = services
-    }*/
 
     fun checkOrderValidity(order: Order) {
         _orderValidity.value = Resource.success(null)

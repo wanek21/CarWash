@@ -101,13 +101,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/carWashGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="imgMap,tvCarWah,tvAddress,imgNext"/>
+
             <TextView
                 android:id="@+id/tvCarWashesLoadingStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
-                android:visibility="gone"
+                android:text="Загрузка"
+                android:textColor="#000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -26,7 +26,7 @@ class WebService @Inject constructor(
 
         carWashes.add(CarWash(name = "Автомойка \"МИР\"", address = "Лейтенанта Шмидта, 1"))
 
-        carsList.add(Car(1, "Audi", "TT", "A999AA", "152", "Легковая"))
+        //carsList.add(Car(1, "Audi", "TT", "A999AA", "152", "Легковая"))
         carsList.add(Car(2, "Toyota", "Camry", "A234AA", "52", "Легковая"))
         carsList.add(Car(3, "ВАЗ", "2109", "р943од", "52", "Легковая"))
 
@@ -158,6 +158,7 @@ class WebService @Inject constructor(
     }
 
     fun sendReview(review: Review): Resource<String> {
+        Log.d("my",review.toString())
         return Resource.success(null)
     }
 

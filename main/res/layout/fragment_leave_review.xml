@@ -60,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:progressTint="#FECF00"
+            android:rating="4"
             android:secondaryProgressTint="#FECF00"
             android:progressBackgroundTint="#59FECF00"
             app:layout_constraintEnd_toEndOf="parent"
@@ -88,43 +89,52 @@
 
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/imgSpeed"
                 android:layout_width="@dimen/liked_thing_size"
                 android:layout_height="@dimen/liked_thing_size"
-                android:src="@drawable/ic_liked_speed"
-                app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/liked_speed_back"
+                app:layout_constraintEnd_toStartOf="@+id/imgCost"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/imgCost"
                 android:layout_width="@dimen/liked_thing_size"
                 android:layout_height="@dimen/liked_thing_size"
-                android:src="@drawable/ic_liked_cost"
-                app:layout_constraintEnd_toStartOf="@+id/imageView12"
+                android:src="@drawable/liked_cost_back"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintEnd_toStartOf="@+id/imgService"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintStart_toEndOf="@+id/imgSpeed"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/imgService"
                 android:layout_width="@dimen/liked_thing_size"
                 android:layout_height="@dimen/liked_thing_size"
-                android:src="@drawable/ic_liked_service"
-                app:layout_constraintEnd_toStartOf="@+id/imageView13"
+                android:src="@drawable/liked_service_back"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintEnd_toStartOf="@+id/imgCleanliness"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintStart_toEndOf="@+id/imgCost"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView13"
+                android:id="@+id/imgCleanliness"
                 android:layout_width="@dimen/liked_thing_size"
                 android:layout_height="@dimen/liked_thing_size"
-                android:src="@drawable/ic_liked_clean"
+                android:src="@drawable/liked_clean_back"
+                android:clickable="true"
+                android:focusable="true"
+                android:longClickable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imageView12"
+                app:layout_constraintStart_toEndOf="@+id/imgService"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -135,9 +145,9 @@
                 android:text="@string/speed_of_order"
                 android:textColor="@color/hint"
                 android:textSize="@dimen/liked_thing_title"
-                app:layout_constraintEnd_toEndOf="@+id/imageView10"
-                app:layout_constraintStart_toStartOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+                app:layout_constraintEnd_toEndOf="@+id/imgSpeed"
+                app:layout_constraintStart_toStartOf="@+id/imgSpeed"
+                app:layout_constraintTop_toBottomOf="@+id/imgSpeed" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -147,9 +157,9 @@
                 android:text="@string/cost_of_order"
                 android:textSize="@dimen/liked_thing_title"
                 android:textColor="@color/hint"
-                app:layout_constraintEnd_toEndOf="@+id/imageView11"
-                app:layout_constraintStart_toStartOf="@+id/imageView11"
-                app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+                app:layout_constraintEnd_toEndOf="@+id/imgCost"
+                app:layout_constraintStart_toStartOf="@+id/imgCost"
+                app:layout_constraintTop_toBottomOf="@+id/imgCost" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -159,9 +169,9 @@
                 android:text="@string/service_of_order"
                 android:textSize="@dimen/liked_thing_title"
                 android:textColor="@color/hint"
-                app:layout_constraintEnd_toEndOf="@+id/imageView12"
-                app:layout_constraintStart_toStartOf="@+id/imageView12"
-                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+                app:layout_constraintEnd_toEndOf="@+id/imgService"
+                app:layout_constraintStart_toStartOf="@+id/imgService"
+                app:layout_constraintTop_toBottomOf="@+id/imgService" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -171,14 +181,14 @@
                 android:text="@string/cleanliness_of_order"
                 android:textSize="@dimen/liked_thing_title"
                 android:textColor="@color/hint"
-                app:layout_constraintEnd_toEndOf="@+id/imageView13"
-                app:layout_constraintStart_toStartOf="@+id/imageView13"
-                app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+                app:layout_constraintEnd_toEndOf="@+id/imgCleanliness"
+                app:layout_constraintStart_toStartOf="@+id/imgCleanliness"
+                app:layout_constraintTop_toBottomOf="@+id/imgCleanliness" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/etComment"
             android:layout_width="0dp"
             android:layout_height="@dimen/users_review_edittext_height"
             android:layout_marginStart="24dp"
@@ -206,6 +216,17 @@
             android:text="@string/done"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnLeaveReview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

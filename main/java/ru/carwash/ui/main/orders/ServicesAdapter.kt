@@ -47,13 +47,6 @@ class ServicesAdapter : RecyclerView.Adapter<ServicesAdapter.ViewHolder> {
         return ViewHolder(view)
     }
 
-    /*fun getSelectedServices(): ArrayList<Service> {
-        val result = ArrayList<Service>()
-        for (position in selectedServices) {
-            result.add(services[position])
-        }
-        return result
-    }*/
     private fun changeSelectedServices() {
         val result = ArrayList<Service>()
         for (position in selectedIndexes) {
@@ -81,6 +74,7 @@ class ServicesAdapter : RecyclerView.Adapter<ServicesAdapter.ViewHolder> {
         }
         holder.tvService.text = services[position].name
         holder.tvPrice.text = services[position].price.toString() + "Р"
+        if(position + 1 == itemCount) holder.line.visibility = View.INVISIBLE
     }
 
     override fun getItemCount(): Int {

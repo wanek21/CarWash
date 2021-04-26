@@ -68,6 +68,7 @@ class OrderingStep3Fragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ordering_step3, container, false)
         rvServices = view.findViewById(R.id.rvServices)
+        //rvServices?.isNestedScrollingEnabled = true
         tvServicesLoadingStatus = view.findViewById(R.id.tvServicesLoadingStatus)
         tvServicesLoadingStatus?.setOnClickListener {
             viewModel.getAvailableServices()
