@@ -34,6 +34,7 @@
                     android:text="@string/cancel"
                     android:textColor="@color/white"
                     android:textSize="@dimen/toolbar_text_size_side"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -61,6 +62,7 @@
                     android:text="@string/save"
                     android:textColor="@color/white"
                     android:textSize="@dimen/toolbar_text_size_side"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -145,13 +147,13 @@
                 android:textAlignment="textStart"
                 android:textColor="@color/hint"
                 android:textSize="@dimen/register_text_size"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+                app:layout_constraintEnd_toStartOf="@+id/etFirstName"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/etFirstName"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/register_block_height"
                 android:background="@color/white"
@@ -185,13 +187,13 @@
                 android:textAlignment="textStart"
                 android:textColor="@color/hint"
                 android:textSize="@dimen/register_text_size"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonLastName"
+                app:layout_constraintEnd_toStartOf="@+id/etLastName"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
             <EditText
-                android:id="@+id/editTextTextPersonLastName"
+                android:id="@+id/etLastName"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/register_block_height"
                 android:background="@color/white"
@@ -274,7 +276,7 @@
                 android:layout_height="@dimen/register_block_height"
                 android:background="@color/white"
                 android:ems="10"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:paddingEnd="18dp"
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"

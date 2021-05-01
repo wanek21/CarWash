@@ -168,4 +168,17 @@ class WebService @Inject constructor(
     fun getAvailableServices(): Resource<ArrayList<Service>> {
         return Resource.success(servicesList)
     }
+
+    fun getUserInfo(): Resource<User> {
+        return Resource.success(User(
+                firstName = "Киану",
+                lastName = "Ривз",
+                email = "sweetpizza123@gmail.com",
+                phone = "+79503398459",
+                city = "Нижний Новгород"
+        ))
+    }
+    fun editUser(user: User): Resource<String> {
+        return Resource.success(null)
+    }
 }

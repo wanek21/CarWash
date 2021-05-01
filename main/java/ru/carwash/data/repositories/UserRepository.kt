@@ -26,24 +26,22 @@ class UserRepository @Inject constructor(
         return webService.register(user)
     }
 
-    /*suspend fun getCars() : Resource<ArrayList<Car>> {
+    fun logout() {
+        sessionManager.logout()
+    }
+
+    suspend fun getUserInfo(): Resource<User> {
         return withContext(Dispatchers.IO) {
-            delay(2000L)
-            webService.getCars()
+            delay(700L)
+            webService.getUserInfo()
         }
     }
 
-    suspend fun addCar(car: AddEditCar): Resource<String> {
+    suspend fun editUser(user: User): Resource<String> {
         return withContext(Dispatchers.IO) {
-            delay(500L)
-            webService.addCar(car)
+            delay(800L)
+            webService.editUser(user)
         }
     }
-
-    suspend fun editCar(car: AddEditCar): Resource<String> {
-        return withContext(Dispatchers.IO) {
-            webService.editCar(car)
-        }
-    }*/
 
 }

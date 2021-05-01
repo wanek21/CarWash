@@ -18,6 +18,10 @@
     <fragment
         android:id="@+id/editProfile"
         tools:layout="@layout/fragment_edit_profile"
-        android:name="ru.carwash.ui.main.profile.EditProfileFragment"/>
+        android:name="ru.carwash.ui.main.profile.EditProfileFragment">
+        <action
+            android:id="@+id/action_editProfile_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
 
 </navigation>
